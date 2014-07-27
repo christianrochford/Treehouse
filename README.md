@@ -1,4 +1,0 @@
-Treehouse
-=========
-
-Treehouse Republic website
