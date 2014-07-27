@@ -8,9 +8,10 @@ p{
 }
 
 a{
-	color: black;
+	color: $white;
+	font-family: 'Ubuntu', sans-serif;
     transition: all 300ms ease-in-out;
     &:hover, &:focus, &:active{
-    	color: red
+    	color: $orange;
     }
 }
