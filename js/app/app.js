@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	$('#home').height($(window).height());
 	$('#mobile-open').click(function(e){
 		e.preventDefault();
 		$(this).hide();
@@ -28,4 +29,5 @@ $(window).resize(function(){
 	} else {
 		$('#mobile-open').show();
 	}
+	$('#home').height($(window).height());
 });

@@ -13,7 +13,6 @@ header{
 		top: 0;
 		left: 0;
 		z-index: -1;
-		left: 0;
 		transform: rotate(-1.5deg) translate(-30px, -60px);
 		@include breakpoint(max-width, 740px){
 			z-index: 1;
@@ -29,7 +28,7 @@ header{
 	nav{
 		width: 500px;
 		float: right;
-		margin: 12px 40px 0 0;
+		margin: 10px 40px 0 0;
 		transition: height 300ms ease-in-out;
 		@include breakpoint(max-width, 740px){
 			background: $white;
@@ -41,9 +40,18 @@ header{
 		}
 		ul{
 			text-align: center;
+			@include breakpoint(max-width, 740px){
+				margin: 15px 0 0 0;
+			}
 			li{
 				display: inline-block;
 				padding-left: 36px;
+				font-size: 0.8em;
+				a{
+					&:hover, &:focus, &:active{
+				    	color: $brown;
+				    }
+				}
 				@include breakpoint(max-width, 740px){
 					width: 100%;
 					height: 40px;
@@ -51,12 +59,19 @@ header{
 					padding: 0;
 					a{
 						color: $orange;
+						font-size: 1em;
 						display: block;
-						width: 100%;
+						width: 40%;
+						margin: 0 30%;
 						float: left;
 						height: 40px;
 						text-align: center;
-						padding-top: 20px;
+						padding-top: 12px;
+						&:hover, &:focus, &:active{
+					    	background: $orange;
+					    	background: $orange-opaque;
+					    	color: $white;
+					    }
 					}
 				}
 			}
