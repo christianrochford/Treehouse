@@ -1,4 +1,5 @@
 #home{
+	text-align: center;
 	#big-vid{
 		width: auto;
 		height: auto;
@@ -12,6 +13,32 @@
 		background-repeat: no-repeat;
 		background-position: top center;
 		background-size: cover;
+	}
+	#intro{
+		width: 300px;
+		margin: 200px auto 0;
+		.icon-treehouse{
+			color: $white;
+			font-size: 10em;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		h2{
+			color: $white;
+			font-size: 24px;
+			text-transform: uppercase;
+			font-weight: 300;
+		}
+		#boxes{
+			width: 100%;
+			margin-top: 20px;
+			.icon-block1, .icon-block2, .icon-block3{
+				font-size: 2em;
+				margin: 0 10px;
+				text-align: center;
+			}
+		}
 	}
 	.scroller{
 		width: 100%;

@@ -1,19 +1,10 @@
-/*/////////////
-	Type Fonts
-/////////////*/
-
-
-/*///////////
-	Icons
-///////////*/
-
 @font-face {
 	font-family: 'treehouse';
-	src:url('../icons/treehouse.eot?-2cdwre');
-	src:url('../icons/treehouse.eot?#iefix-2cdwre') format('embedded-opentype'),
-		url('../icons/treehouse.woff?-2cdwre') format('woff'),
-		url('../icons/treehouse.ttf?-2cdwre') format('truetype'),
-		url('../icons/treehouse.svg?-2cdwre#treehouse') format('svg');
+	src:url('fonts/treehouse.eot?-2cdwre');
+	src:url('fonts/treehouse.eot?#iefix-2cdwre') format('embedded-opentype'),
+		url('fonts/treehouse.woff?-2cdwre') format('woff'),
+		url('fonts/treehouse.ttf?-2cdwre') format('truetype'),
+		url('fonts/treehouse.svg?-2cdwre#treehouse') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

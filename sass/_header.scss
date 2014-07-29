@@ -21,8 +21,20 @@ header{
 	#logo{
 		width: 200px;
 		float: left;
+		margin: 12px 0 0 30px;
+		.icon-treehouse{
+			font-size: 3.5em;
+			width: 28px;
+			float: left;
+		}
 		h1{
-			text-indent: -2000%;
+			width: auto;
+			float: left;
+			font-size: 1em;
+			color: $white;
+			font-weight: 300;
+			text-transform: uppercase;
+			margin-top: 36px;
 		}
 	}
 	nav{
