@@ -2,6 +2,16 @@
 	Type Fonts
 /////////////*/
 
+@font-face {
+    font-family: 'agency';
+    src: url('../fonts/agency_fb-webfont.eot');
+    src: url('../fonts/agency_fb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/agency_fb-webfont.woff') format('woff'),
+         url('../fonts/agency_fb-webfont.ttf') format('truetype'),
+         url('../fonts/agency_fb-webfont.svg#agency_fbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*///////////
 	Icons

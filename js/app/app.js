@@ -20,6 +20,17 @@ $(document).ready(function(){
 	} else {
 		$('#mobile-open').show();
 	}
+
+	// Text Box Hover
+	$('.block').hover(
+		function(){
+			$(this).next('.text-box').addClass('on');
+		},
+		function(){
+			$('.text-box').removeClass('on');
+		}
+	);
+
 });
 
 $(window).resize(function(){

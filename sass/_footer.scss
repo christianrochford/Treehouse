@@ -29,6 +29,7 @@ footer{
 		li{
 			line-height: 1em;
 			a{
+				color: $grey;
 				font-size: 0.8em;
 			}
 		}
@@ -46,7 +47,7 @@ footer{
 			display: none;
 		}
 		p{
-			color: $white;
+			color: $dark-grey;
 			font-size: 0.8em;
 			text-align: center;
 			line-height: 1.2em;
@@ -71,7 +72,7 @@ footer{
 			width: 40%;
 		}
 		p{
-			color: $white;
+			color: $dark-grey;
 			font-size: 0.8em;
 			text-align: left;
 			margin: 12px 0 5px 0;
@@ -80,6 +81,9 @@ footer{
 			text-align: center;
 			li{
 				display: inline-block;
+				a{
+					color: $grey;
+				}
 			}
 		}
 	}

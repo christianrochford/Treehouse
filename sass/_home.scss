@@ -16,19 +16,26 @@
 	}
 	#intro{
 		width: 300px;
-		margin: 200px auto 0;
+		position: relative;
+		top: 150px;
+		left: 50%;
+		margin-left: -150px;
 		.icon-treehouse{
 			color: $white;
 			font-size: 10em;
 			width: 100%;
 			text-align: center;
 			margin-bottom: 20px;
+			text-shadow: 0 0 10px $shadow;
 		}
 		h2{
 			color: $white;
-			font-size: 24px;
+			font-size: 30px;
+			font-family: 'agency', sans-serif;
 			text-transform: uppercase;
+			margin-top: 20px;
 			font-weight: 300;
+			text-shadow: 0 0 10px $shadow;
 		}
 		#boxes{
 			width: 100%;
@@ -37,6 +44,32 @@
 				font-size: 2em;
 				margin: 0 10px;
 				text-align: center;
+				text-shadow: 0 0 10px $shadow;
+			}
+			.text-box{
+				background: none;
+				padding: 10px 20px;
+				color: $white;
+				margin: 20px auto 0;
+				display: table;
+				position: absolute;
+				top: 270px;
+				left: 0;
+				transition: all 300ms ease-in-out;
+				p{
+					color: transparent;
+					display: table-cell;
+					margin-bottom: 0;
+					vertical-align: middle;
+					transition: all 300ms ease-in-out;
+				}
+			}
+			.text-box.on{
+				background: $orange;
+				background: $orange-opaque;
+				p{
+					color: $white;
+				}
 			}
 		}
 	}
