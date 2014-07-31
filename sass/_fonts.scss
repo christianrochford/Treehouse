@@ -3,6 +3,31 @@
 /////////////*/
 
 @font-face {
+    font-family: 'ubuntu';
+    src: url('../fonts/ubuntu.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ubuntu-bold';
+    src: url('../fonts/ubuntu-bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ubuntu-light';
+    src: url('../fonts/ubuntu-light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ubuntu-medium';
+    src: url('../fonts/ubuntu-medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'agency';
     src: url('../fonts/agency_fb-webfont.eot');
     src: url('../fonts/agency_fb-webfont.eot?#iefix') format('embedded-opentype'),
@@ -42,6 +67,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-down:before {
+	content: "\f078";
+}
 .icon-vimeo:before {
 	content: "\e600";
 }
@@ -63,8 +91,11 @@
 .icon-linkedin:before {
 	content: "\e606";
 }
-.icon-arrow-down:before {
-	content: "\e607";
+.icon-play:before {
+	content: "\e618";
+}
+.icon-googleplus2:before {
+	content: "\e619";
 }
 .icon-close:before {
 	content: "\e608";
@@ -81,7 +112,7 @@
 .icon-play-hover:before {
 	content: "\e60c";
 }
-.icon-play:before {
+.icon-play-circle:before {
 	content: "\e60d";
 }
 .icon-social:before {

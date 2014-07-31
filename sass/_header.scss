@@ -22,6 +22,11 @@ header{
 		width: 200px;
 		float: left;
 		margin: 12px 0 0 30px;
+		position: relative;
+		z-index: 2;
+		@include breakpoint(tablet){
+			margin-top: 6px;
+		}
 		.icon-treehouse{
 			font-size: 3.2em;
 			width: 28px;
@@ -78,16 +83,13 @@ header{
 						color: $orange;
 						font-size: 1em;
 						display: block;
-						width: 40%;
-						margin: 0 30%;
+						width: 100%;
 						float: left;
 						height: 40px;
 						text-align: center;
-						padding-top: 12px;
+						padding-top: 9px;
 						&:hover, &:focus, &:active{
-					    	background: $orange;
-					    	background: $orange-opaque;
-					    	color: $white;
+					    	background: white;
 					    }
 					}
 				}
@@ -96,6 +98,7 @@ header{
 	}
 	nav.open{
 		height: 260px;
+		margin-top: -20px;
 	}
 	#mobile-open, #mobile-close{
 		display: none;
@@ -103,13 +106,19 @@ header{
 		margin: 12px 20px;
 		position: relative;
 		z-index: 2;
-		@include breakpoint(max-width, 740px){
+		&:hover, &:focus, &:active{
+	    	color: $brown;
+		}
+		@include breakpoint(min-width, 740px){
 			display: block;
 		}
 	}
 	#mobile-open{
-		@include breakpoint(max-width, 740px){
+		@include breakpoint(min-width, 740px){
 			display: block;
 		}
+	}
+	#mobile-close{
+		font-weight: 900;
 	}
 }
