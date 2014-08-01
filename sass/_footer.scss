@@ -5,9 +5,11 @@ footer{
 	bottom: 0;
 	left: 0;
 	z-index: 998;
+	overflow: hidden;
 	transition: all 300ms ease-in-out;
 	@include breakpoint(mobile-landscape){
 		height: 220px;
+		position: relative;
 	}
 	#background{
 		background: $black;
@@ -50,6 +52,9 @@ footer{
 				&:hover, &:focus, &:active{
 			    	color: $orange;
 				}
+				@include breakpoint(mobile-landscape){
+					font-size: 0.6em;
+				}
 			}
 		}
 	}
@@ -67,7 +72,7 @@ footer{
 		}
 		@include breakpoint(mobile-landscape){
 			display: block;
-			margin-top: 102px;
+			margin-top: 84px;
 		}
 		p{
 			color: $dark-grey;
@@ -93,7 +98,7 @@ footer{
 		margin-top: 56px;
 		@include breakpoint(mobile-landscape){
 			width: 100%;
-			margin-top: -180px;
+			margin-top: -190px;
 		}
 		ul{
 			text-align: center;

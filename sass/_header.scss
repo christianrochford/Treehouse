@@ -17,6 +17,9 @@ header{
 		@include breakpoint(max-width, 740px){
 			z-index: 1;
 		}
+		@include breakpoint(mobile-landscape){
+			transform: rotate(-1.5deg) translate(-30px, -56px);
+		}
 	}
 	#logo{
 		width: 200px;
@@ -111,6 +114,10 @@ header{
 		}
 		@include breakpoint(min-width, 740px){
 			display: block;
+		}
+		@include breakpoint(mobile-landscape){
+			font-size: 1.6em;
+			margin: 12px 15px;
 		}
 	}
 	#mobile-open{
