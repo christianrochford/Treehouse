@@ -21,6 +21,18 @@ $(document).ready(function(){
 		$('#mobile-open').show();
 	}
 
+	// Fullpage
+	$('#fullpage').fullpage({
+		verticalCentered: true,
+        resize : false,
+        anchors:['firstSlide', 'secondSlide'],
+        scrollingSpeed: 300,
+        easing: 'easeInQuart',
+        menu: false,
+        navigation: false,
+        touchSensitivity: 15
+	});
+
 	// Text Box Hover
 	$('.block').hover(
 		function(){
