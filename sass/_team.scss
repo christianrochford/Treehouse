@@ -1,0 +1,87 @@
+#team{
+	width: 100%;
+	position: relative;
+	padding: 0 10px;
+	.flexslider{
+		.slides{
+			width: 165px;
+			li{
+				margin: 0 30px;
+			}
+			img{
+				width: 100%;
+				float: left;
+			}
+			.details{
+				background: url('../img/profile_bg.png');
+				background-repeat: none;
+				background-size: cover;
+				background-position: top center;
+				width: 100%;
+				float: left;
+				padding: 10px;
+				.name, .title, .quote, .email{
+					color: $black;
+					font-family: 'ubuntu', sans-serif;
+					font-weight: 900;
+					font-size: 0.8em;
+					text-align: left;
+					margin: 0;
+				}
+				.quote{
+					line-height: 1em;
+					font-size: 0.7em;
+					font-weight: 600;
+					margin: 0;
+				}
+				.email{
+					font-size: 0.5em;
+					font-weight: 900;
+					display: block;
+					width: 100%;
+				}
+				.desc{
+					color: $white;
+					font-family: 'ubuntu', sans-serif;
+					font-size: 0.7em;
+					text-align: left;
+					margin: 10px 0;
+				}
+			}
+			.contact{
+				width: 93px;
+				float: right;
+				margin-top: 5px;
+				.iconblock{
+					color: $black;
+					position: relative;
+					font-size: 1.6em;
+					float: left;
+					margin-left: 5px;
+					span{
+						color: $white;
+						font-size: 1em;
+						position: absolute;
+						top: 3px;
+						left: 3px;
+					}
+					.icon-mail{
+						font-size: 0.3em;
+						top: 8px;
+						left: 4px;
+					}
+					.icon-twitter{
+						font-size: 0.7em;
+						top: 5px;
+						left: 7px;
+					}
+					.icon-linkedin{
+						font-size: 0.5em;
+						top: 6px;
+						left: 4px;
+					}
+				}
+			}
+		}
+	}
+}
