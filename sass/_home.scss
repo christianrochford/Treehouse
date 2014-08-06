@@ -3,6 +3,9 @@
 	background-repeat: no-repeat !important;
 	background-position: top center !important;
 	background-size: cover !important;
+	width: 100%;
+	position: relative;
+	padding: 0 10px;
 	#big-vid{
 		width: auto;
 		height: auto;
@@ -93,25 +96,10 @@
 			}
 		}
 	}
-	.scroller{
-		width: 100%;
-		height: 20px;
-		position: absolute;
-		bottom: 50px;
-		@include breakpoint(mobile-landscape){
-			position: relative;
-			z-index: 1;
-		}
-		a{
-			display: block;
-			font-size: 1.6em;
-			width: 40px;
-			text-align: center;
-			position: absolute;
-			left: 50%;
-			margin: -4px 0 0 -20px;
-			z-index: 999;
-		}
-	}
 }
-	
+
+#about, #work, #team, #contact {
+	width: 100%;
+	position: relative;
+	padding: 0 10px;
+	}

@@ -35,38 +35,142 @@
 		</nav>
 	</header>
  
-	<div id="fullpage">
-		<div class="section" id="home" style="background: url(img/treehouse.png);">
-			<video autoplay loop poster="img/treehouse.png" id="big-vid">
-				<source src="video/treehouse.webm" type="video/webm">
-				<source src="video/treehouse.mp4" type="video/mp4">
-			</video>
-			<div id="intro">
-				<span class="icon-treehouse"></span>
-				<h2>Treehouse Republic</h2>
-				<div id="boxes">
-					<a href="#" class="icon-block1 block" aria-hidden="true"></a>
-					<div class="text-box">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, quo, optio eius ducimus.</p>
-					</div>
-					<a href="#" class="icon-block2 block" aria-hidden="true"></a>
-					<div class="text-box">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, quo, optio eius ducimus.</p>
-					</div>
-					<a href="#" class="icon-block3 block" aria-hidden="true"></a>
-					<div class="text-box">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, quo, optio eius ducimus.</p>
-					</div>
+	<div class="page" id="home" style="background: url(img/treehouse.png);">
+		<video autoplay loop poster="img/treehouse.png" id="big-vid">
+			<!-- <source src="video/treehouse.webm" type="video/webm">
+			<source src="video/treehouse.mp4" type="video/mp4"> -->
+		</video>
+		<div id="intro">
+			<span class="icon-treehouse"></span>
+			<h2>Treehouse Republic</h2>
+			<div id="boxes">
+				<a href="#" class="icon-block1 block" aria-hidden="true"></a>
+				<div class="text-box">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, quo, optio eius ducimus.</p>
+				</div>
+				<a href="#" class="icon-block2 block" aria-hidden="true"></a>
+				<div class="text-box">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, quo, optio eius ducimus.</p>
+				</div>
+				<a href="#" class="icon-block3 block" aria-hidden="true"></a>
+				<div class="text-box">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, quo, optio eius ducimus.</p>
 				</div>
 			</div>
-			<div class="scroller">
-				<a href="#about" class="icon-arrow-down" aria-hidden="true"></a>
-			</div>
 		</div>
-		<div class="section" id="about">Some section</div>
-	    <div class="section" id="team">Some section</div>
-	    <div class="section" id="work">Some section</div>
-	    <div class="section" id="contact">Some section</div>
+		<div class="scroller">
+			<a href="#about" class="icon-arrow-down" aria-hidden="true"></a>
+		</div>
+	</div>
+
+	<div class="page" id="about">
+		<div class="scroller">
+			<a href="#team" class="icon-arrow-down" aria-hidden="true"></a>
+		</div>
+	</div>
+
+	<div class="page" id="team">
+		<div class="flexslider">
+		  <ul class="slides">
+		    <li>
+		      <img src="img/profile.png" alt="">
+		      <div class="details">
+		      	<p class="name">Stephen Fagan</p>
+		      	<p class="title">Managing Director</p>
+		      	<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quis ratione omnis similique quae aut nesciunt mollitia adipisci odio a ea reiciendis</p>
+		      	<p class="quote">"Cheese is a kind of meat!"</p>
+		      	<a href="mailto:Stephen@treehouserepublic.com" class="email">E: Stephen@treehouserepublic.com</a>
+		      	<div class="contact">
+		      		<a href="mailto:Stephen@treehouserepublic.com" class="icon-iconblock2 iconblock" aria-hidden="true">
+		      			<span class="icon-mail" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock3 iconblock" aria-hidden="true">
+		      			<span class="icon-twitter" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock1 iconblock" aria-hidden="true">
+		      			<span class="icon-linkedin" aria-hidden="true"></span>
+		      		</a>
+		      	</div>
+		      </div>
+		    </li>
+		    <li>
+		      <img src="img/profile.png" alt="">
+		      <div class="details">
+		      	<p class="name">Dale Robinson</p>
+		      	<p class="title">Operations Director</p>
+		      	<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quis ratione omnis similique quae aut nesciunt mollitia adipisci odio a ea reiciendis</p>
+		      	<p class="quote">"Cheese is a kind of meat!"</p>
+		      	<a href="mailto:dale@treehouserepublic.com" class="email">E: dale@treehouserepublic.com</a>
+		      	<div class="contact">
+		      		<a href="mailto:dale@treehouserepublic.com" class="icon-iconblock2 iconblock" aria-hidden="true">
+		      			<span class="icon-mail" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock3 iconblock" aria-hidden="true">
+		      			<span class="icon-twitter" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock1 iconblock" aria-hidden="true">
+		      			<span class="icon-linkedin" aria-hidden="true"></span>
+		      		</a>
+		      	</div>
+		      </div>
+		    </li>
+		    <li>
+		      <img src="img/profile.png" alt="">
+		      <div class="details">
+		      	<p class="name">Kevin McBride</p>
+		      	<p class="title">Technical Director</p>
+		      	<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quis ratione omnis similique quae aut nesciunt mollitia adipisci odio a ea reiciendis</p>
+		      	<p class="quote">"Cheese is a kind of meat!"</p>
+		      	<a href="mailto:kevin@treehouserepublic.com" class="email">E: kevin@treehouserepublic.com</a>
+		      	<div class="contact">
+		      		<a href="mailto:kevin@treehouserepublic.com" class="icon-iconblock2 iconblock" aria-hidden="true">
+		      			<span class="icon-mail" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock3 iconblock" aria-hidden="true">
+		      			<span class="icon-twitter" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock1 iconblock" aria-hidden="true">
+		      			<span class="icon-linkedin" aria-hidden="true"></span>
+		      		</a>
+		      	</div>
+		      </div>
+		    </li>
+		    <li>
+		      <img src="img/profile.png" alt="">
+		      <div class="details">
+		      	<p class="name">Stephen Fagan</p>
+		      	<p class="title">Managing Director</p>
+		      	<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quis ratione omnis similique quae aut nesciunt mollitia adipisci odio a ea reiciendis</p>
+		      	<p class="quote">"Cheese is a kind of meat!"</p>
+		      	<a href="mailto:Stephen@treehouserepublic.com" class="email">E: Stephen@treehouserepublic.com</a>
+		      	<div class="contact">
+		      		<a href="mailto:Stephen@treehouserepublic.com" class="icon-iconblock2 iconblock" aria-hidden="true">
+		      			<span class="icon-mail" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock3 iconblock" aria-hidden="true">
+		      			<span class="icon-twitter" aria-hidden="true"></span>
+		      		</a>
+		      		<a href="#" class="icon-iconblock1 iconblock" aria-hidden="true">
+		      			<span class="icon-linkedin" aria-hidden="true"></span>
+		      		</a>
+		      	</div>
+		      </div>
+		    </li>
+		  </ul>
+		</div>
+		<div class="scroller">
+			<a href="#work" class="icon-arrow-down" aria-hidden="true"></a>
+		</div>
+	</div>
+
+	<div class="page" id="work">
+		<div class="scroller">
+			<a href="#contact" class="icon-arrow-down" aria-hidden="true"></a>
+		</div>
+	</div>
+
+	<div class="page" id="contact">
+		
 	</div>
 
 	<footer>
