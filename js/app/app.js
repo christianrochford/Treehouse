@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Set page height
-  $('#home, #about, #team, #work, #contact').height($(window).height());
+  $('#home, #about, #team, #contact').height($(window).height());
 
   // Mobile nav
   $('#mobile-open').click(function(e) {
@@ -50,7 +50,6 @@ $(document).ready(function() {
     arrows: true,
     dots: false,
     infinite: false,
-    centerMode: true,
     speed: 300,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -59,7 +58,6 @@ $(document).ready(function() {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
-        dots: true
       }
     }, {
       breakpoint: 600,
@@ -76,11 +74,33 @@ $(document).ready(function() {
     }]
   });
 
+  // Fitvids
+  $("#work-video").fitVids();
+
+});
+
+$(window).load(function() {
+  if ($(window.width() > 760)) {
+    // Set #work height
+    if ($('#work-gallery').height() > $('#work-intro').height()) {
+      $('#work-intro').height($('#work-gallery').height() - 40);
+    }
+  }
 });
 
 $(window).resize(function() {
 
-  $('#home, #about, #team, #work, #contact').height($(window).height());
+  $('#home, #about, #team, #contact').height($(window).height());
+
+  if ($(window.width() > 760)) {
+    if ($('#work-gallery').height() > $('#work-intro').height()) {
+      $('#work-intro').height($('#work-gallery').height() - 40);
+    } else {
+      $('#work-intro').css({
+        height: 'auto !important'
+      });
+    }
+  }
 
   if ($(window).width() > 740) {
     $('#mobile-open, #mobile-close').hide();

@@ -19,6 +19,10 @@
 		@media (max-width: 960px) { @content; }
 	}
 
+	@else if $point == large-desktop {
+		@media (max-width: 1020px) { @content; }
+	}
+
 	@else {
 		@media ($point: $value) { @content; }
 	}

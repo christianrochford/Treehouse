@@ -1,0 +1,93 @@
+#work{
+	overflow: hidden;
+	#work-intro{
+		width: 20%;
+		float: left;
+		background-image: url('../img/work_bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top center;
+		padding: 20px;
+		@include breakpoint(large-desktop){
+			width: 30%;
+		}
+		@include breakpoint(desktop){
+			width: 40%;
+		}
+		@include breakpoint(tablet){
+			width: 100%;
+			padding-bottom: 0;
+		}
+		h2{
+			font-family: 'agency', sans-serif;
+			font-weight: bold;
+			font-size: 2em;
+			color: $brown;
+			text-transform: uppercase;
+			margin: 0;
+			@include breakpoint(tablet){
+				width: auto;
+				float: left;
+				padding-right: 10px;
+			}
+		}
+		p{
+			font-size: 0.8em;
+		}
+	}
+	#work-gallery{
+		width: 80%;
+		float: left;
+		padding-left: 20px;
+		@include breakpoint(large-desktop){
+			width: 70%;
+		}
+		@include breakpoint(desktop){
+			width: 60%;
+		}
+		@include breakpoint(tablet){
+			width: 100%;
+			padding-left: 0;
+		}
+		#categories{
+			background: $black;
+			width: 100%;
+			ul{
+				margin: 0 0 20px 10px;
+				li{
+					display: inline;
+					margin-right: 20px;
+					a{
+						font-family: 'ubuntu', sans-serif;
+						color: $white;
+						font-size: 0.8em;
+						font-weight: bold;
+						margin: 0;
+						line-height: 2.6em;
+					}
+				}
+			}
+		}
+		#projects-link{
+			width: 100%;
+			height: 36px;
+			background: $red;
+			margin-top: 20px;
+			a{
+				float: right;
+				font-family: 'ubuntu', sans-serif;
+				color: $white;
+				font-size: 0.8em;
+				font-weight: bold;
+				margin: 0 10px 0 0;
+				line-height: 2.6em;
+				&:after{
+					font-family: "treehouse";
+					content: "\e618";
+					color: $white;
+					padding-top: 5px;
+				}
+			}
+		}
+	}
+}

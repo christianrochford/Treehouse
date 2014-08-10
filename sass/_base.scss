@@ -16,7 +16,17 @@ a{
     }
 }
 .content-wrapper{
-	padding-top: 80px;
+	padding: 80px 20px 0;
+	width: 960px;
+	margin: auto;
+	@include breakpoint(desktop){
+		width: 80%;
+		margin: 0 10%;
+	}
+	@include breakpoint(mobile-landscape){
+		width: 90%;
+		margin: 0 5%;
+	}
 }
 .scroller{
 	width: 100%;

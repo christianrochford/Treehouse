@@ -9,6 +9,7 @@
 		text-transform: uppercase;
 	}
 	.carousel{
+		margin: auto;
 		.slick-slide{
 			width: 200px;
 			margin: 0 20px;
@@ -35,30 +36,40 @@
 				margin: 0;
 				line-height: 1.1em;
 			}
-			.quote{
-				line-height: 1em;
-				font-size: 0.7em;
-				font-weight: 600;
-				margin: 0;
-			}
-			.email{
-				font-size: 0.5em;
-				font-weight: 900;
-				display: block;
-				width: 100%;
-			}
 			.desc{
 				color: $white;
 				font-family: 'ubuntu', sans-serif;
 				font-size: 0.7em;
 				text-align: left;
 				margin: 10px 0;
+				@include breakpoint(mobile-landscape){
+					display: none;
+				}
+			}
+			.quote{
+				line-height: 1em;
+				font-size: 0.7em;
+				font-weight: 600;
+				margin: 0;
+				@include breakpoint(mobile-landscape){
+					margin-top: 8px;
+				}
+			}
+			.email{
+				font-size: 0.6em;
+				font-weight: 300;
+				display: block;
+				width: 100%;
+				margin: 8px 0 0 0;
 			}
 		}
 		.contact{
 			width: 93px;
 			float: right;
-			margin-top: 5px;
+			margin-top: 12px;
+			@include breakpoint(mobile){
+				width: 100px;
+			}
 			.iconblock{
 				color: $black;
 				position: relative;
