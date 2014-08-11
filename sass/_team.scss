@@ -2,6 +2,9 @@
 	width: 100%;
 	position: relative;
 	padding: 0 10px;
+	.content-wrapper{
+		padding: 0 20px;
+	}
 	h2{
 		font-family: 'agency', sans-serif;
 		font-size: 2em;
@@ -14,6 +17,8 @@
 			width: 200px;
 			margin: 0 20px;
 			max-width: 200px;
+			@include breakpoint(mobile-landscape){
+			}
 		}
 		img{
 			width: 100%;

@@ -1,5 +1,34 @@
 $(document).ready(function() {
 
+  // Initialise Carousel
+  $('.carousel').slick({
+    arrows: true,
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
+  });
+
   // Set page height
   $('#home, #about, #team, #contact').height($(window).height());
 
@@ -45,62 +74,29 @@ $(document).ready(function() {
     }
   );
 
-  // Initialise Carousel
-  $('.carousel').slick({
-    arrows: true,
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      }
-    }, {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }, {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+  // Fitvids
+  $(".work-video").fitVids();
+
+  // Work Videos
+  $('.work-video.commercials, .work-video.entertainment, .work-video.production, .work-video.interactive').hide();
+  $('.projects-link.commercials, .projects-link.entertainment, .projects-link.production, .projects-link.interactive').hide();
+  $('.gallery-link').click(function(e){
+    e.preventDefault();
+    console.log('HEY!');
+    var href = $(this).attr("href");
+    var hash = href.substr(1);
+    $('.work-video').hide();
+    $('.work-video.' + hash).show();
+    $('.projects-link').hide();
+    $('.projects-link.' + hash).show();
   });
 
-  // Fitvids
-  $("#work-video").fitVids();
 
-});
-
-$(window).load(function() {
-  if ($(window.width() > 760)) {
-    // Set #work height
-    if ($('#work-gallery').height() > $('#work-intro').height()) {
-      $('#work-intro').height($('#work-gallery').height() - 40);
-    }
-  }
 });
 
 $(window).resize(function() {
 
   $('#home, #about, #team, #contact').height($(window).height());
-
-  if ($(window.width() > 760)) {
-    if ($('#work-gallery').height() > $('#work-intro').height()) {
-      $('#work-intro').height($('#work-gallery').height() - 40);
-    } else {
-      $('#work-intro').css({
-        height: 'auto !important'
-      });
-    }
-  }
 
   if ($(window).width() > 740) {
     $('#mobile-open, #mobile-close').hide();
