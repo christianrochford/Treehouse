@@ -11730,9 +11730,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     $(this).hide();
     $('#mobile-open').show();
     $('nav').removeClass('open');
-
   });
   $('nav a').click(function() {
+    console.log('hey!');
     $('#mobile-close').hide();
     $('#mobile-open').show();
     $('nav').removeClass('open');
@@ -11740,8 +11740,14 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   if ($(window).width() > 740) {
     $('#mobile-open, #mobile-close').hide();
     $('nav').fadeIn();
+    $('nav a').click(function() {
+      $('#mobile-open').hide();
+    });
   } else {
     $('#mobile-open').show();
+    $('nav a').click(function() {
+      $('#mobile-open').show();
+    });
   }
 
   // Set intro position
@@ -11787,8 +11793,15 @@ $(window).resize(function() {
   if ($(window).width() > 740) {
     $('#mobile-open, #mobile-close').hide();
     $('nav').fadeIn();
+    $('nav').removeClass('open');
+    $('nav a').click(function() {
+      $('#mobile-open').hide();
+    });
   } else {
     $('#mobile-open').show();
+    $('nav a').click(function() {
+      $('#mobile-open').show();
+    });
   }
 
   var introTop = (($('#home').height() - $('#intro').height()) / 2) - 20;

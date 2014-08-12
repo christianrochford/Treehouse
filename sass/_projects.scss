@@ -1,0 +1,103 @@
+#projects{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	h2{
+		color: $brown;
+		font-family: 'agency', sans-serif;
+		font-size: 2em;
+		text-transform: uppercase;
+		width: 130px;
+		float: left;
+		margin-bottom: 0;
+	}
+	ul{
+		margin: 20px 0 0;
+		@include breakpoint(mobile-landscape){
+			overflow: hidden;
+			padding: 10px 0;
+		}
+		li{
+			display: inline;
+			margin-right: 20px;
+			@include breakpoint(mobile-landscape){
+				display: inline-block;
+				width: 50%;
+				float: left;
+				margin: 0;
+				position: relative;
+				z-index: 1;
+			}
+			a{
+				font-family: 'ubuntu', sans-serif;
+				color: $red;
+				font-size: 0.8em;
+				font-weight: bold;
+				margin: 0;
+				line-height: 2.6em;
+				@include breakpoint(mobile-landscape){
+					display: block;
+					text-align: center; 
+				}
+			}
+		}
+	}
+	#gallery{
+		width: 100%;
+		overflow: hidden;
+		padding-bottom: 120px;
+		transition: all 300ms ease-in-out;
+		.project{
+			width: 206px;
+			height: 107px;
+			background: $black;
+			margin: 10px;
+			position: relative;
+			float: left;
+			overflow: hidden;
+			transition: all 300ms ease-in-out;
+			&:hover, &:focus, &:active{
+				.overbox{
+					bottom: 0;
+				}
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 1;
+			}
+			.overbox{
+				width: 100%;
+				height: 80px;
+				background: $orange;
+				position: absolute;
+				left: 0;
+				bottom: -80px;
+				z-index: 2;
+				padding: 10px;
+				transition: all 300ms ease-in-out;
+				p{
+					margin: 0;
+					font-size: 0.8em;
+					a{
+						&:hover, &:focus, &:active{
+					    	color: inherit;
+					    }
+					}
+				}
+				.title a{
+					color: $black;
+				}
+				.client a{
+					color: $white;
+				}
+				.category a{
+					color: $red;
+				}
+			}
+		}
+	}
+}
