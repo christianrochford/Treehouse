@@ -15,8 +15,9 @@
 			width: 100%;
 		}
 	}
-	#category-menu{
+	#filters{
 		margin: 20px 0 0;
+		float: left;
 		@include breakpoint(tablet){
 			margin-top: 16px;
 		}
@@ -116,19 +117,14 @@
 					font-size: 0.8em;
 					height: 20px;
 					text-align: left;
-					a{
-						&:hover, &:focus, &:active{
-					    	color: inherit;
-					    }
-					}
 				}
-				.title a{
+				.title{
 					color: $black;
 				}
-				.client a{
+				.client{
 					color: $white;
 				}
-				.category a{
+				.category{
 					color: $red;
 				}
 			}

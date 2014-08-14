@@ -50,235 +50,244 @@
   <div id="projects" class="row">
     <div class="twelve columns">
       <h2>Projects</h2>
-      <ul id="category-menu" class="filter">
-        <li><a href="#filter-all" data-filter-value="">All</a>
-        </li>
-        <li><a href="#filter-commercials" data-filter-value=".commercials">Commercials</a>
-        </li>
-        <li><a href="#filter-entertainment" data-filter-value=".entertainment">Entertainment</a>
-        </li>
-        <li><a href="#filter-production" data-filter-value=".production">Production</a>
-        </li>
-        <li><a href="#filter-interactive" data-filter-value=".interactive">Interactive</a>
-        </li>
-      </ul>
+      <section id="options">
+        <ul data-option-key="filter" class="option-set" id="filters">
+          <li><a href="#filter" class="selected "data-option-value="*">All</a>
+          </li>
+          <li><a href="#filter" data-option-value=".commercials">Commercials</a>
+          </li>
+          <li><a href="#filter" data-option-value=".entertainment">Entertainment</a>
+          </li>
+          <li><a href="#filter" data-option-value=".production">Production</a>
+          </li>
+          <li><a href="#filter" data-option-value=".interactive">Interactive</a>
+          </li>
+        </ul>
+      </section>
       <div id="gallery" class="js-isotope">
-        <div class="project commercials">
+        <div class="project commercials isotope-item" data-category="commercials">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project entertainment">
+        <div class="project entertainment isotope-item" data-category="entertainment">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project production">
+        <div class="project interactive isotope-item" data-category="interactive">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project interactive">
+        <div class="project production isotope-item" data-category="production">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project commercials">
+        <div class="project commercials isotope-item" data-category="commercials">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project entertainment">
+        <div class="project entertainment isotope-item" data-category="entertainment">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project production">
+        <div class="project interactive isotope-item" data-category="interactive">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project interactive">
+        <div class="project production isotope-item" data-category="production">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project commercials">
+        <div class="project commercials isotope-item" data-category="commercials">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project entertainment">
+        <div class="project entertainment isotope-item" data-category="entertainment">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project production">
+        <div class="project interactive isotope-item" data-category="interactive">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project interactive">
+        <div class="project production isotope-item" data-category="production">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project commercials">
+        <div class="project commercials isotope-item" data-category="commercials">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project entertainment">
+        <div class="project entertainment isotope-item" data-category="entertainment">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project production">
+        <div class="project interactive isotope-item" data-category="interactive">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
         </div>
-        <div class="project interactive">
+        <div class="project production isotope-item" data-category="production">
           <a href="#project-title">
             <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
           </a>
-          <div class="overbox">
-            <p class="title"><a href="#project-title">Project Title</a>
-            </p>
-            <p class="cdivent"><a href="#" class="cdivent">Cdivent/Agency</a>
-            </p>
-            <p class="category"><a href="#" class="category">Category</a>
-              <p>
-          </div>
+        </div>
+        <div class="project commercials isotope-item" data-category="commercials">
+          <a href="#project-title">
+            <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
+          </a>
+        </div>
+        <div class="project entertainment isotope-item" data-category="entertainment">
+          <a href="#project-title">
+            <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
+          </a>
+        </div>
+        <div class="project interactive isotope-item" data-category="interactive">
+          <a href="#project-title">
+            <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
+          </a>
+        </div>
+        <div class="project production isotope-item" data-category="production">
+          <a href="#project-title">
+            <img src="img/project.jpg" alt="project">
+            <div class="overbox">
+              <p class="title">Project Title</p>
+              <p class="client">Client/Agency</p>
+              <p class="category">Category<p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="row page" id="video-modal">
+    <div id="background"></div>
+    <div class="columns twelve">
+      <a href="#" class="icon-close"></a>
+      <div id="project-intro">
+        <h2>Client/Agency</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, perferendis eum porro accusamus dolore unde corrupti dolor sint aliquid beatae nostrum molestias itaque deserunt dolorum culpa facilis distinctio veniam quae.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, provident, quaerat, explicabo, tempore facere doloribus necessitatibus veniam adipisci obcaecati laudantium beatae ab cumque quam. Ullam ipsam illo maxime porro eius!</p>
+      </div>
+      <div id="project-video-wrap">
+        <h2>Project Title</h2>
+        <div class="project-video">
+          <iframe width="560" height="315" src="//www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- <div class="scroller">
-			<a href="#contact" class="icon-arrow-down" aria-hidden="true"></a>
-		</div> -->
-  </div>
 
   <footer>
     <div id="background"></div>

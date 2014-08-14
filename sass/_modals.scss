@@ -1,0 +1,98 @@
+#video-modal{
+	display: none;
+	width: 90%;
+	height: 80%;
+	margin: 0 5%;
+	position: fixed;
+	top: 80px;
+	padding: 10px;
+	transition: all 300ms ease-in-out;
+	#background{
+		width: 100%;
+		height: 100%;
+		background: $black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 998;
+	}
+	.icon-close{
+		display: block;
+		width: 17px;
+		height: 17px;
+		padding: 2px;
+		background: $orange;
+		font-size: 0.8em;
+		color: $white;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 1000;
+		&:hover, &:focus, &:active{
+			background: $brown;
+	    	color: $orange;
+	    }
+	}
+	#project-intro{
+		width: 30%;
+		float: left;
+		margin-top: 10px;
+		background-image: url('../img/work_bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top center;
+		padding: 20px 20px 40px;
+		position: relative;
+		z-index: 999;
+		transition: all 300ms ease-in-out;
+		@include breakpoint(desktop){
+			width: 40%;
+		}
+		@include breakpoint(tablet){
+			width: 100%;
+			padding-bottom: 0;
+		}
+		h2{
+			font-family: 'agency', sans-serif;
+			font-weight: bold;
+			font-size: 2em;
+			color: $brown;
+			text-transform: uppercase;
+			margin: 0;
+			transition: all 300ms ease-in-out;
+			@include breakpoint(tablet){
+				width: auto;
+				float: left;
+				padding-right: 10px;
+			}
+		}
+		p{
+			font-size: 0.8em;
+		}
+	}
+	#project-video-wrap{
+		width: 70%;
+		float: left;
+		padding-left: 20px;
+		position: relative;
+		z-index: 999;
+		transition: all 300ms ease-in-out;
+		@include breakpoint(desktop){
+			width: 60%;
+		}
+		@include breakpoint(tablet){
+			width: 100%;
+			padding-left: 0;
+		}
+		h2{
+			font-family: 'agency', sans-serif;
+			font-weight: bold;
+			font-size: 2em;
+			width: 80%;
+			color: $white;
+			text-transform: uppercase;
+			margin: 0;
+			transition: all 300ms ease-in-out;
+		}
+	}
+}

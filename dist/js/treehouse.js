@@ -11790,51 +11790,57 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     $('.projects-link.' + hash).show();
   });
 
-  // Projects Gallery
-  var $container = $('#gallery'),
-    filters = {},
-    colW = 226;
-  $container.isotope({
-    itemSelector: '.project',
-    filter: ''
-  });
-
-  if(window.location.hash){
-    var hash = window.location.hash.substring(1);
-    $('.filter a').each(function(){
-      var filterVal = $(this).attr('data-filter-value');
-      if(filterVal == '.' + hash){
-        $(this).click();
-      }
-    });
-  }
-  
-
-  // filter links
-  $('.filter a').click(function() {
-    var $this = $(this);
-
-    var $optionSet = $this.parents('.option-set');
-    // change selected class
-    $optionSet.find('.selected').removeClass('selected');
-    $this.addClass('selected');
-
-    // store filter value in object
-    // i.e. filters.color = 'red'
-    var group = $optionSet.attr('data-filter-group');
-    filters[group] = $this.attr('data-filter-value');
-
-    // convert object into array
-    var isoFilters = [];
-    for (var prop in filters) {
-      isoFilters.push(filters[prop])
-    }
-    var selector = isoFilters.join('');
+  // Isotope Projects Gallery
+  $(function() {
+    var $container = $('#gallery');
     $container.isotope({
-      filter: selector
+        itemSelector: '.project'
     });
-    return false;
-  });
+    var $optionSets = $('#options .option-set'),
+        $optionLinks = $optionSets.find('a');
+    $optionLinks.click(function() {
+        var $this = $(this);
+        // don't proceed if already selected
+        if ($this.hasClass('selected')) {
+            return false;
+        }
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+            key = $optionSet.attr('data-option-key'),
+            value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[key] = value;
+        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+            // changes in layout modes need extra logic
+            changeLayoutMode($this, options)
+        } else {
+            // otherwise, apply new options
+            $container.isotope(options);
+        }
+        return false;
+    });
+
+    if(window.location.hash){
+      var hash = window.location.hash.substring(1);
+      $('a[data-option-value=".' + hash  + '"]').click();
+    } 
+
+    // Video Modal
+    $('.project').click(function(){
+      $('#gallery').fadeOut(300);
+      $('#video-modal').fadeIn(300);
+
+    });       
+    $('#video-modal .icon-close').click(function(e){
+      e.preventDefault();
+      $('#video-modal').fadeOut(300);
+      $('#gallery').fadeIn(300);
+    });
+});
 
 });
 
@@ -11853,7 +11859,6 @@ $(window).load(function() {
     });
   }
   // Center team content
-  var windowHeight = ($(window).height() - 200);
   var teamHeight = $('#team').height();
   var teamMargin = ((windowHeight - teamHeight) / 2);
   if (teamMargin > 0) {
@@ -11909,7 +11914,6 @@ $(window).resize(function() {
     });
   }
   // Center team content
-  var windowHeight = ($(window).height() - 200);
   var teamHeight = $('#team').height();
   var teamMargin = ((windowHeight - teamHeight) / 2);
   if (teamMargin > 0) {
