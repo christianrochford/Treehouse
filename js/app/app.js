@@ -1,26 +1,27 @@
 $(document).ready(function() {
 
   // Set page height
-  $('#home, #about, #team, #contact').height($(window).height());
+  $('#home').height($(window).height());
+  $('#gallery').css({minHeight: ($(window).height() - 230)});
 
   // Mobile nav
   $('#mobile-open').click(function(e) {
     e.preventDefault();
     $(this).hide();
     $('#mobile-close').show();
-    $('nav').addClass('open');
+    $('nav, .social').addClass('open');
   });
   $('#mobile-close').click(function(e) {
     e.preventDefault();
     $(this).hide();
     $('#mobile-open').show();
-    $('nav').removeClass('open');
+    $('nav, .social').removeClass('open');
   });
   $('nav a').click(function() {
     console.log('hey!');
     $('#mobile-close').hide();
     $('#mobile-open').show();
-    $('nav').removeClass('open');
+    $('nav, .social').removeClass('open');
   });
   if ($(window).width() > 740) {
     $('#mobile-open, #mobile-close').hide();
@@ -34,6 +35,20 @@ $(document).ready(function() {
       $('#mobile-open').show();
     });
   }
+
+  // Smooth Scroll
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
 
   // Set intro position
   var introTop = (($('#home').height() - $('#intro').height()) / 2) - 20;
@@ -81,7 +96,7 @@ $(document).ready(function() {
   });
 
   // Fitvids
-  $(".work-video").fitVids();
+  $(".work-video, .project-video").fitVids();
 
   // Work Videos
   $('.work-video.commercials, .work-video.entertainment, .work-video.production, .work-video.interactive').hide();
@@ -138,14 +153,12 @@ $(document).ready(function() {
 
     // Video Modal
     $('.project').click(function(){
-      $('#gallery').fadeOut(300);
-      $('#video-modal').fadeIn(300);
+      $('#modal-bg, #video-modal').fadeIn(300);
 
     });       
-    $('#video-modal .icon-close').click(function(e){
+    $('#video-modal .icon-close, #filters a').click(function(e){
       e.preventDefault();
-      $('#video-modal').fadeOut(300);
-      $('#gallery').fadeIn(300);
+      $('#modal-bg, #video-modal').fadeOut(300);
     });
 });
 
@@ -205,7 +218,7 @@ $(window).load(function() {
 
 $(window).resize(function() {
 
-  $('#home, #about, #team, #contact').height($(window).height());
+  $('#home').height($(window).height());
 
   // Center about content
   var windowHeight = ($(window).height() - 200);
@@ -260,12 +273,14 @@ $(window).resize(function() {
   if ($(window).width() > 740) {
     $('#mobile-open, #mobile-close').hide();
     $('nav').fadeIn();
-    $('nav').removeClass('open');
+    $('nav, .social').removeClass('open');
     $('nav a').click(function() {
       $('#mobile-open').hide();
     });
   } else {
     $('#mobile-open').show();
+    $('#mobile-close').hide();
+    $('nav, .social').removeClass('open');
     $('nav a').click(function() {
       $('#mobile-open').show();
     });

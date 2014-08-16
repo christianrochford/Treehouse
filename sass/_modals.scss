@@ -1,12 +1,25 @@
+#modal-bg{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 121px;
+	left: 0;
+	background: $white-opaque;
+	z-index: 400;
+}
 #video-modal{
 	display: none;
 	width: 90%;
-	height: 80%;
-	margin: 0 5%;
+	max-width: 90% !important;
+	margin: 63px 5% 0;
 	position: fixed;
 	top: 80px;
-	padding: 10px;
+	padding: 10px 10px 20px;
 	transition: all 300ms ease-in-out;
+	@include breakpoint(mobile-landscape){
+		position: absolute;
+	}
 	#background{
 		width: 100%;
 		height: 100%;
@@ -14,23 +27,24 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 998;
+		z-index: 498;
 	}
 	.icon-close{
 		display: block;
 		width: 17px;
 		height: 17px;
-		padding: 2px;
+		padding: 3px;
 		background: $orange;
-		font-size: 0.8em;
+		font-size: 0.6em;
+		font-weight: 900;
 		color: $white;
 		position: absolute;
 		top: 10px;
-		right: 10px;
-		z-index: 1000;
+		right: 15px;
+		z-index: 500;
 		&:hover, &:focus, &:active{
-			background: $brown;
-	    	color: $orange;
+			padding: 2px;
+			font-size: 0.7em;
 	    }
 	}
 	#project-intro{
@@ -43,7 +57,7 @@
 		background-position: top center;
 		padding: 20px 20px 40px;
 		position: relative;
-		z-index: 999;
+		z-index: 499;
 		transition: all 300ms ease-in-out;
 		@include breakpoint(desktop){
 			width: 40%;
@@ -72,10 +86,10 @@
 	}
 	#project-video-wrap{
 		width: 70%;
-		float: left;
+		float: right;
 		padding-left: 20px;
 		position: relative;
-		z-index: 999;
+		z-index: 499;
 		transition: all 300ms ease-in-out;
 		@include breakpoint(desktop){
 			width: 60%;
@@ -93,6 +107,18 @@
 			text-transform: uppercase;
 			margin: 0;
 			transition: all 300ms ease-in-out;
+			@include breakpoint(tablet){
+				margin: 10px 0;
+			}
+		}
+		.project-video{
+			width: 100%;
+			@include breakpoint(tablet){
+				margin: 10px 0;
+			}
+			iframe{
+				width: 100%;
+			}
 		}
 	}
 }

@@ -55,8 +55,7 @@ header{
 		margin: 10px 40px 0 0;
 		transition: height 300ms ease-in-out;
 		@include breakpoint(tablet){
-			background: $white;
-			background: $white-opaque;
+			background: $black;
 			width: 100%;
 			margin: -12px 0 0 0;
 			height: 0;
@@ -83,25 +82,37 @@ header{
 					display: block;
 					padding: 0;
 					a{
-						color: $orange;
 						font-size: 1em;
 						display: block;
 						width: 100%;
 						float: left;
 						height: 40px;
 						text-align: center;
-						padding-top: 9px;
+						padding-top: 7px;
+						text-transform: uppercase;
 						&:hover, &:focus, &:active{
-					    	background: white;
+					    	color: $orange;
 					    }
 					}
 				}
 			}
 		}
 	}
+	.social{
+		display: none;
+	}
 	nav.open{
-		height: 260px;
+		height: 255px;
 		margin-top: -20px;
+	}
+	.social.open{
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		background: $black;
+		ul{
+			margin-bottom: 10px;
+		}
 	}
 	#mobile-open, #mobile-close{
 		display: none;
@@ -112,9 +123,6 @@ header{
 		&:hover, &:focus, &:active{
 	    	color: $white;
 	    	color: $white-opaque;
-		}
-		@include breakpoint(tablet){
-			display: none;
 		}
 		@include breakpoint(mobile-landscape){
 			font-size: 1.6em;

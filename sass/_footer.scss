@@ -47,6 +47,7 @@ footer{
 				padding: 0 2px;
 			}
 			a{
+				font-family: 'agency', sans-serif;
 				color: $grey;
 				font-size: 0.8em;
 				&:hover, &:focus, &:active{
@@ -92,50 +93,7 @@ footer{
 			}
 		}
 	}
-	#social{
-		width: 220px;
-		float: right;
-		margin-top: 56px;
-		@include breakpoint(mobile-landscape){
-			width: 100%;
-			margin-top: -190px;
-		}
-		ul{
-			text-align: center;
-			li{
-				display: inline-block;
-				font-size: 1.6em;
-				a{
-					color: $grey;
-					position: relative;
-					&:hover, &:focus, &:active{
-				    	color: $orange;
-				    }
-					span{
-						color: $black;
-						font-size: 0.7em;
-						padding: 3px;
-						position: absolute;
-						top: 0;
-						left: 0;
-					}
-					.icon-twitter{
-						padding: 5px 3px;
-					}
-					.icon-vimeo{
-						padding: 5px;
-					}
-					.icon-play{
-						padding: 4px 1px;
-					}
-					.icon-pinterest{
-						padding: 4px 6px;
-					}
-					.icon-tumblr{
-						padding: 4px 1px;
-					}
-				}
-			}
-		}
-	}
+}
+.projects footer, .blog footer{
+	position: relative;
 }
