@@ -1,11 +1,13 @@
 #work{
-	width: 100%;
 	overflow: hidden;
-	margin: 0 auto;
 	transition: all 300ms ease-in-out;
-	@include breakpoint(large-desktop){
-		max-width: 960px;
-		margin: 0 auto;
+	width: 80%;
+	margin: 0 10%;
+	padding-top: 100px;
+	@include breakpoint(mobile-landscape){
+		width: 100%;
+		margin: 0;
+		padding-top: 80px;
 	}
 	#work-intro{
 		width: 30%;

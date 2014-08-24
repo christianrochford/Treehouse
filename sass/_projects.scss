@@ -1,5 +1,4 @@
 #projects{
-	width: 100%;
 	height: auto;
 	overflow: hidden;
 	padding-top: 80px;
@@ -10,7 +9,9 @@
 		text-transform: uppercase;
 		width: 130px;
 		float: left;
-		margin: 7px 0 0 10px;
+		margin: 10px 0 0 10px;
+		position: relative;
+		z-index: 500;
 		@include breakpoint(max-width, 630px){
 			width: 100%;
 		}
@@ -50,6 +51,8 @@
 				font-weight: bold;
 				margin: 0;
 				line-height: 2.6em;
+				position: relative;
+				z-index: 500;
 				@include breakpoint(max-width, 496px){
 					background: $orange;
 					color: $white;
@@ -79,7 +82,6 @@
 			margin: 10px;
 			position: relative;
 			overflow: hidden;
-			transition: all 300ms ease-in-out;
 			@include breakpoint(max-width, 496px){
 				margin: 10px 1%;
 				width: 48%;

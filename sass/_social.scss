@@ -1,45 +1,47 @@
 .social{
-	width: 220px;
+	width: 284px;
 	float: right;
-	margin-top: 56px;
+	margin: 56px 15px 0 0;
 	@include breakpoint(mobile-landscape){
 		width: 100%;
-		margin-top: -156px;
+		margin: -156px 0 0 0;
 	}
 	ul{
 		text-align: center;
 		li{
 			display: inline-block;
 			font-size: 1.6em;
+			margin-right: 5px;
 			a{
 				color: $grey;
 				position: relative;
 				&:hover, &:focus, &:active{
 			    	color: $orange;
 			    }
-				span{
-					color: $black;
-					font-size: 0.7em;
-					padding: 3px;
-					position: absolute;
-					top: 0;
-					left: 0;
-				}
-				.icon-twitter{
-					padding: 5px 3px;
-				}
-				.icon-vimeo{
-					padding: 5px;
-				}
-				.icon-play{
-					padding: 4px 1px;
-				}
-				.icon-pinterest{
-					padding: 4px 6px;
-				}
-				.icon-tumblr{
-					padding: 4px 1px;
-				}
+			}
+			.icon-facebook{
+				font-size: 24px;
+			}
+			.icon-twitter{
+				font-size: 30px;
+			}
+			.icon-youtube{
+				font-size: 30px;
+			}
+			.icon-linkedin{
+				font-size: 24px;
+			}
+			.icon-instagram{
+				font-size: 30px;
+			}
+			.icon-googleplus{
+				font-size: 30px;
+			}
+			.icon-tumblr{
+				font-size: 24px;
+			}
+			.icon-pinterest{
+				font-size: 24px;
 			}
 		}
 	}

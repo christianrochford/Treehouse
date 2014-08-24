@@ -1,11 +1,8 @@
 footer{
 	width: 100%;
 	height: 100px;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	z-index: 998;
 	overflow: hidden;
+	position: relative;
 	transition: all 300ms ease-in-out;
 	@include breakpoint(mobile-landscape){
 		height: 220px;
@@ -68,7 +65,7 @@ footer{
 		@include breakpoint(max-width, 920px){
 			margin-top: 66px;
 		}
-		@include breakpoint(max-width, 850px){
+		@include breakpoint(max-width, 1060px){
 			display: none;
 		}
 		@include breakpoint(mobile-landscape){
@@ -94,6 +91,6 @@ footer{
 		}
 	}
 }
-.projects footer, .blog footer{
+.projects footer, .blog footer, .blog-detail footer{
 	position: relative;
 }

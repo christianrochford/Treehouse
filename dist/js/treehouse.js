@@ -11691,11 +11691,83 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     };
 
 }));
-;$(document).ready(function() {
+;// // Hide body till loaded
+
+// jQuery(document).ready(function(){
+//   delay();
+// });
+ 
+// function delay() {
+//   var secs = 1000;
+//   setTimeout('initFadeIn()', secs);
+// }
+ 
+// function initFadeIn() {
+//   jQuery("body").css("visibility","visible");
+//   jQuery("body").css("display","none");
+//   jQuery("body").fadeIn(500);
+// }
+
+
+// // Switch Video to image mobile
+
+// $(document).ready(function(){
+// if ( Modernizr.touch ) {
+//       $('#home #video-holder').css('display','none');
+//   }  
+//   });
+
+// // Resize Video to fill background
+
+//  $(document).ready(function(){
+
+// var min_width = 300; // minimum video width allowed
+// var video_initial_width;  // original video dimensions
+// var video_initial_height;
+
+// $(function() { // runs after DOM has loaded
+    
+//     video_initial_width = parseInt($('video').attr('width'));
+//     video_initial_height = parseInt($('video').attr('height'));
+    
+//     $(window).resize(function () { resizeToCover(); });
+//     $(window).trigger('resize');
+// });
+
+// function resizeToCover() {
+    
+//     // set the video holder to the window size
+//     $('#video-holder').width($(window).width());
+//     $('#video-holder').height($(window).height());
+
+//     // use largest scale factor of horizontal/vertical
+//     var scale_h = $(window).width() / video_initial_width;
+//     var scale_v = $(window).height() / video_initial_height;
+//     var scale = scale_h > scale_v ? scale_h : scale_v;
+
+//     // don't allow scaled width < minimum video width
+//     if (scale * video_initial_width < min_width) {scale = min_width / video_initial_width;};
+
+//     // now scale the video
+//     $('video').width(scale * video_initial_width);
+//     $('video').height(scale * video_initial_height);
+//     // and center it by scrolling the video holder
+//     $('#video-holder').scrollLeft(($('video').width() - $(window).width()) / 2);
+//     $('#video-holder').scrollTop(($('video').height() - $(window).height()) / 2);
+    
+// };
+//   });
+
+
+
+
+$(document).ready(function() {
 
   // Set page height
-  $('#home').height($(window).height());
-  $('#gallery').css({minHeight: ($(window).height() - 230)});
+  $('#gradient, #home').height($(window).height());
+  $('#gallery').css({
+    minHeight: ($(window).height() - 230)
+  });
 
   // Mobile nav
   $('#mobile-open').click(function(e) {
@@ -11716,7 +11788,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     $('#mobile-open').show();
     $('nav, .social').removeClass('open');
   });
-  if ($(window).width() > 740) {
+  if ($(window).width() > 768) {
     $('#mobile-open, #mobile-close').hide();
     $('nav').fadeIn();
     $('nav a').click(function() {
@@ -11731,9 +11803,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
   // Smooth Scroll
   $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top
@@ -11796,7 +11868,6 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   $('.projects-link.commercials, .projects-link.entertainment, .projects-link.production, .projects-link.interactive').hide();
   $('.gallery-link').click(function(e) {
     e.preventDefault();
-    console.log('HEY!');
     var href = $(this).attr("href");
     var hash = href.substr(1);
     $('.work-video').hide();
@@ -11809,51 +11880,61 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   $(function() {
     var $container = $('#gallery');
     $container.isotope({
-        itemSelector: '.project'
+      itemSelector: '.project'
     });
     var $optionSets = $('#options .option-set'),
-        $optionLinks = $optionSets.find('a');
+      $optionLinks = $optionSets.find('a');
     $optionLinks.click(function() {
-        var $this = $(this);
-        // don't proceed if already selected
-        if ($this.hasClass('selected')) {
-            return false;
-        }
-        var $optionSet = $this.parents('.option-set');
-        $optionSet.find('.selected').removeClass('selected');
-        $this.addClass('selected');
-        // make option object dynamically, i.e. { filter: '.my-filter-class' }
-        var options = {},
-            key = $optionSet.attr('data-option-key'),
-            value = $this.attr('data-option-value');
-        // parse 'false' as false boolean
-        value = value === 'false' ? false : value;
-        options[key] = value;
-        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
-            // changes in layout modes need extra logic
-            changeLayoutMode($this, options)
-        } else {
-            // otherwise, apply new options
-            $container.isotope(options);
-        }
+      var $this = $(this);
+      // don't proceed if already selected
+      if ($this.hasClass('selected')) {
         return false;
+      }
+      var $optionSet = $this.parents('.option-set');
+      $optionSet.find('.selected').removeClass('selected');
+      $this.addClass('selected');
+      // make option object dynamically, i.e. { filter: '.my-filter-class' }
+      var options = {},
+        key = $optionSet.attr('data-option-key'),
+        value = $this.attr('data-option-value');
+      // parse 'false' as false boolean
+      value = value === 'false' ? false : value;
+      options[key] = value;
+      if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+        // changes in layout modes need extra logic
+        changeLayoutMode($this, options);
+      } else {
+        // otherwise, apply new options
+        $container.isotope(options);
+      }
+      return false;
     });
 
-    if(window.location.hash){
+    if (window.location.hash) {
       var hash = window.location.hash.substring(1);
-      $('a[data-option-value=".' + hash  + '"]').click();
-    } 
+      $('a[data-option-value=".' + hash + '"]').click();
+    }
 
     // Video Modal
-    $('.project').click(function(){
+    $('.project').click(function() {
       $('#modal-bg, #video-modal').fadeIn(300);
-
-    });       
-    $('#video-modal .icon-close, #filters a').click(function(e){
+      window.scrollTo(0, 0);
+    });
+    $('#video-modal .icon-close, #filters a').click(function(e) {
       e.preventDefault();
       $('#modal-bg, #video-modal').fadeOut(300);
     });
-});
+  });
+
+  //  Blog Hover Events
+  $('.title, .img-wrap, .read-more').hover(
+    function(){
+      $(this).parent().addClass('hover');
+    },
+    function(){
+      $(this).parent().removeClass('hover');
+    }
+  );
 
 });
 
@@ -11871,99 +11952,14 @@ $(window).load(function() {
       paddingTop: 110
     });
   }
-  // Center team content
-  var teamHeight = $('#team').height();
-  var teamMargin = ((windowHeight - teamHeight) / 2);
-  if (teamMargin > 0) {
-    $('#team').css({
-      paddingTop: teamMargin
-    });
-  } else {
-    $('#team').css({
-      paddingTop: 110
-    });
-  }
-  // Center work content
-  var workHeight = $('#work').height();
-  var workMargin = ((windowHeight - workHeight) / 2);
-  if (workMargin > 0) {
-    $('#work').css({
-      paddingTop: workMargin
-    });
-  } else {
-    $('#work').css({
-      paddingTop: 110
-    });
-  }
-  // Center contact content
-  var contactHeight = $('#contact').height();
-  var contactMargin = ((windowHeight - contactHeight) / 2);
-  if (contactMargin > 0) {
-    $('#contact').css({
-      marginTop: contactMargin
-    });
-  } else {
-    $('#contact').css({
-      paddingTop: 110
-    });
-  }
+ 
 });
 
 $(window).resize(function() {
 
-  $('#home').height($(window).height());
+  $('#gradient, #home').height($(window).height());
 
-  // Center about content
-  var windowHeight = ($(window).height() - 200);
-  var aboutHeight = $('#about').height();
-  var aboutMargin = ((windowHeight - aboutHeight) / 2);
-  if (aboutMargin > 0) {
-    $('#about').css({
-      paddingTop: aboutMargin
-    });
-  } else {
-    $('#about').css({
-      paddingTop: 110
-    });
-  }
-  // Center team content
-  var teamHeight = $('#team').height();
-  var teamMargin = ((windowHeight - teamHeight) / 2);
-  if (teamMargin > 0) {
-    $('#team').css({
-      paddingTop: teamMargin
-    });
-  } else {
-    $('#team').css({
-      paddingTop: 110
-    });
-  }
-  // Center work content
-  var workHeight = $('#work').height();
-  var workMargin = ((windowHeight - workHeight) / 2);
-  if (workMargin > 0) {
-    $('#work').css({
-      paddingTop: workMargin
-    });
-  } else {
-    $('#work').css({
-      paddingTop: 110
-    });
-  }
-  // Center contact content
-  var contactHeight = $('#contact').height();
-  var contactMargin = ((windowHeight - contactHeight) / 2);
-  if (contactMargin > 0) {
-    $('#contact').css({
-      paddingTop: contactMargin
-    });
-  } else {
-    $('#contact').css({
-      paddingTop: 110
-    });
-  }
-
-  if ($(window).width() > 740) {
+  if ($(window).width() > 768) {
     $('#mobile-open, #mobile-close').hide();
     $('nav').fadeIn();
     $('nav, .social').removeClass('open');
@@ -11984,4 +11980,147 @@ $(window).resize(function() {
     top: introTop + 'px'
   });
 
-});
+});;// Google Map
+var styles = [
+	{
+    "featureType": "transit.station.rail",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "transit.line",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#e97e24" }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#e97e24" },
+      { "saturation": 0 },
+      { "lightness": 28 }
+    ]
+  },{
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#e97e24" },
+      { "saturation": 100 },
+      { "lightness": -100 }
+    ]
+  },{
+    "featureType": "landscape.man_made",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "landscape.natural",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "water",
+    "stylers": [
+      { "color": "#cccccc" }
+    ]
+  },{
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#cccccc" },
+      { "lightness": -10 }
+    ]
+  },{
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#000000" }
+    ]
+  },{
+    "featureType": "poi",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#e97e24" },
+      { "saturation": 0 },
+      { "lightness": 28 }
+    ]
+  },{
+    "featureType": "road.highway",
+    "stylers": [
+      { "color": "#e97e24" },
+      { "saturation": 0 },
+      { "lightness": 28 }
+    ]
+  },{
+    "featureType": "poi",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "saturation": -100 }
+    ]
+  },{
+    "featureType": "transit.station.bus",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "saturation": -100 }
+    ]
+  },{
+    "featureType": "transit.station.bus",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "road.transit",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+];
+
+var map;
+var dublin = new google.maps.LatLng(53.336985,-6.249164);
+
+function initialize() {
+  var mapOptions = {
+    center: dublin,
+    zoom: 14,
+    zoomControl: false,
+    disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    styles: styles,
+    scrollwheel: false,
+    draggable: false,
+  };
+  
+  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  //Marker 
+  var treehouse = new google.maps.Marker({
+    position: dublin,
+    map: map,
+    icon: '../dist/img/map-logo.png'
+  }); 
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+

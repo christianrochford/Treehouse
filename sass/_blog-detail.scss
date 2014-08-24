@@ -1,0 +1,23 @@
+.blog-detail #blog{
+	padding-top: 80px;
+	@include breakpoint(mobile-landscape){
+		padding-top: 60px;
+	}
+	article{
+		width: auto;
+		.detail-title{
+			min-height: 0;
+		}
+	}
+	#related, #categories, #archives{
+		@include breakpoint(tablet){
+			width: 33.333%;
+			float: left;
+			padding-left: 10px;
+		}
+		@include breakpoint(mobile-landscape){
+			width: 100%;
+			padding-left: 0px;
+		}
+	}
+}

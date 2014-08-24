@@ -3,7 +3,7 @@
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	top: 121px;
+	top: 0;
 	left: 0;
 	background: $white-opaque;
 	z-index: 400;
@@ -11,14 +11,21 @@
 #video-modal{
 	display: none;
 	width: 90%;
+	min-width: 0;
 	max-width: 90% !important;
-	margin: 63px 5% 0;
+	margin: 63px auto 0;
 	position: fixed;
 	top: 80px;
+	left: 5%;
+	z-index: 497;
 	padding: 10px 10px 20px;
 	transition: all 300ms ease-in-out;
 	@include breakpoint(mobile-landscape){
 		position: absolute;
+		width: 94%;
+		max-width: 94% !important;
+		margin: 63px auto 0;
+		left: 3%;
 	}
 	#background{
 		width: 100%;
