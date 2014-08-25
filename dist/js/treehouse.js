@@ -11691,82 +11691,16 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     };
 
 }));
-;// // Hide body till loaded
-
-// jQuery(document).ready(function(){
-//   delay();
-// });
- 
-// function delay() {
-//   var secs = 1000;
-//   setTimeout('initFadeIn()', secs);
-// }
- 
-// function initFadeIn() {
-//   jQuery("body").css("visibility","visible");
-//   jQuery("body").css("display","none");
-//   jQuery("body").fadeIn(500);
-// }
-
-
-// // Switch Video to image mobile
-
-// $(document).ready(function(){
-// if ( Modernizr.touch ) {
-//       $('#home #video-holder').css('display','none');
-//   }  
-//   });
-
-// // Resize Video to fill background
-
-//  $(document).ready(function(){
-
-// var min_width = 300; // minimum video width allowed
-// var video_initial_width;  // original video dimensions
-// var video_initial_height;
-
-// $(function() { // runs after DOM has loaded
-    
-//     video_initial_width = parseInt($('video').attr('width'));
-//     video_initial_height = parseInt($('video').attr('height'));
-    
-//     $(window).resize(function () { resizeToCover(); });
-//     $(window).trigger('resize');
-// });
-
-// function resizeToCover() {
-    
-//     // set the video holder to the window size
-//     $('#video-holder').width($(window).width());
-//     $('#video-holder').height($(window).height());
-
-//     // use largest scale factor of horizontal/vertical
-//     var scale_h = $(window).width() / video_initial_width;
-//     var scale_v = $(window).height() / video_initial_height;
-//     var scale = scale_h > scale_v ? scale_h : scale_v;
-
-//     // don't allow scaled width < minimum video width
-//     if (scale * video_initial_width < min_width) {scale = min_width / video_initial_width;};
-
-//     // now scale the video
-//     $('video').width(scale * video_initial_width);
-//     $('video').height(scale * video_initial_height);
-//     // and center it by scrolling the video holder
-//     $('#video-holder').scrollLeft(($('video').width() - $(window).width()) / 2);
-//     $('#video-holder').scrollTop(($('video').height() - $(window).height()) / 2);
-    
-// };
-//   });
-
-
-
-
-$(document).ready(function() {
+;$(document).ready(function() {
 
   // Set page height
-  $('#gradient, #home').height($(window).height());
+  $('#home').height($(window).height());
+  $('#gradient').height($(window).height() + 100);
   $('#gallery').css({
     minHeight: ($(window).height() - 230)
+  });
+  $('#studio').css({
+    minHeight: ($(window).height() - 100)
   });
 
   // Mobile nav
@@ -11936,6 +11870,17 @@ $(document).ready(function() {
     }
   );
 
+  // Studio content selection
+  $('.studio-detail').hide();
+  $('#facilities').show();
+  $('.studio-link').click(function(e) {
+    e.preventDefault();
+    var href = $(this).attr("href");
+    var hash = href.substr(1);
+    $('.studio-detail').hide();
+    $('#' + hash).show();
+  });
+
 });
 
 $(window).load(function() {
@@ -11957,7 +11902,8 @@ $(window).load(function() {
 
 $(window).resize(function() {
 
-  $('#gradient, #home').height($(window).height());
+  $('#home').height($(window).height());
+  $('#gradient').height($(window).height() + 100);
 
   if ($(window).width() > 768) {
     $('#mobile-open, #mobile-close').hide();
@@ -12117,7 +12063,7 @@ function initialize() {
   var treehouse = new google.maps.Marker({
     position: dublin,
     map: map,
-    icon: '../dist/img/map-logo.png'
+    icon: '../img/map-logo.png'
   }); 
 
 }

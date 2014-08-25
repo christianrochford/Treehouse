@@ -135,7 +135,7 @@ function initialize() {
   var treehouse = new google.maps.Marker({
     position: dublin,
     map: map,
-    icon: '../dist/img/map-logo.png'
+    icon: '../img/map-logo.png'
   }); 
 
 }
