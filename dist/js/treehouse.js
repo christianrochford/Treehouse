@@ -11693,6 +11693,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 }));
 ;$(document).ready(function() {
 
+  // Silence video
+  $('video').prop('muted', true);
+
   // Set page height
   $('#home').height($(window).height());
   $('#gradient').height($(window).height() + 100);
@@ -11862,10 +11865,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
   //  Blog Hover Events
   $('.title, .img-wrap, .read-more').hover(
-    function(){
+    function() {
       $(this).parent().addClass('hover');
     },
-    function(){
+    function() {
       $(this).parent().removeClass('hover');
     }
   );
@@ -11883,6 +11886,43 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 });
 
+// Resize video to fit window
+$(document).ready(function() {
+
+  var min_width = 300; // minimum video width allowed
+  var video_initial_width; // original video dimensions
+  var video_initial_height;
+  $(function() { // runs after DOM has loaded   
+    video_initial_width = parseInt($('video').attr('width'));
+    video_initial_height = parseInt($('video').attr('height'));
+    $(window).resize(function() {
+      resizeToCover();
+    });
+    $(window).trigger('resize');
+  });
+
+  function resizeToCover() {
+    // set the video holder to the window size
+    $('#big-vid').width($(window).width());
+    $('#big-vid').height($(window).height());
+    // use largest scale factor of horizontal/vertical
+    var scale_h = $(window).width() / video_initial_width;
+    var scale_v = $(window).height() / video_initial_height;
+    var scale = scale_h > scale_v ? scale_h : scale_v;
+    // don't allow scaled width < minimum video width
+    if (scale * video_initial_width < min_width) {
+      scale = min_width / video_initial_width;
+    };
+    // now scale the video
+    $('video').width(scale * video_initial_width);
+    $('video').height(scale * video_initial_height);
+    // and center it by scrolling the video holder
+    $('#big-vid').scrollLeft(($('video').width() - $(window).width()) / 2);
+    $('#big-vid').scrollTop(($('video').height() - $(window).height()) / 2);
+  };
+
+});
+
 $(window).load(function() {
   // Center about content
   var windowHeight = ($(window).height() - 200);
@@ -11897,7 +11937,7 @@ $(window).load(function() {
       paddingTop: 110
     });
   }
- 
+
 });
 
 $(window).resize(function() {
@@ -11926,7 +11966,8 @@ $(window).resize(function() {
     top: introTop + 'px'
   });
 
-});;// Google Map
+});
+;// Google Map
 var styles = [
 	{
     "featureType": "transit.station.rail",

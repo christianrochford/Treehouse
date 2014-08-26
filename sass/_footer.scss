@@ -3,6 +3,7 @@ footer{
 	height: 100px;
 	overflow: hidden;
 	position: relative;
+	z-index: 1;
 	transition: all 300ms ease-in-out;
 	@include breakpoint(mobile-landscape){
 		height: 220px;

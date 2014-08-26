@@ -28,10 +28,10 @@
 
 .slick-prev:before, .slick-next:before { font-family: "treehouse"; font-size: 20px; line-height: 1; color: $black; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-.slick-prev { left: -25px; }
+.slick-prev { left: -20px; }
 .slick-prev:before { content: "\e610"; }
 
-.slick-next { right: -25px; }
+.slick-next { right: -20px; }
 .slick-next:before { content: "\e60f"; }
 
 /* Dots */

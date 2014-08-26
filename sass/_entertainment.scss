@@ -1,0 +1,49 @@
+#entertainment{
+	position: relative;
+	padding: 0 10px;
+	h2{
+		color: $brown;
+		font-family: 'agency', sans-serif;
+		font-size: 2em;
+		margin-left: 5%;
+		padding-top: 100px;
+		text-transform: uppercase;
+		@include breakpoint(mobile-landscape){
+			padding-top: 80px;
+		}
+	}
+	.carousel{
+		margin: auto;
+		padding: 0 20px;
+		.slick-slide{
+			width: 200px;
+			margin: 0 10px;
+			max-width: 200px;
+		}
+		.entertainment-content{
+			width: 200px;
+			height: 270px;
+			background: $black;
+			position: relative;
+			.modal-open{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	#description{
+		width: 95%;
+		background: $orange;
+		margin: 20px 2.5%;
+		padding: 20px;
+		p{
+			color: $white;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}

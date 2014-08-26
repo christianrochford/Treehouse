@@ -15,12 +15,18 @@
 		}
 	}
 	form{
+		input, textarea{
+			box-shadow: none;
+			border: none;
+			border-radius: 0;
+		}
 		label{
 			font-size: 1em;
 			color: $black;
 			font-weight: 600;
 		}
 		textarea{
+			box-shadow: none;
 			height: 240px;
 			@include breakpoint(mobile-landscape){
 				height: 100px;
@@ -30,12 +36,11 @@
 			background: $orange;
 			text-align: center;
 			color: $white;
-			border: none;
-			box-shadow: none;
 			line-height: 1.5em;
 			padding: 5px;
 			width: 100%;
 			text-transform: uppercase;
+			-webkit-appearance: none;
 			transition: all 300ms ease-in-out;
 			&:hover, &:focus, &:active{
 				cursor: pointer;
@@ -65,7 +70,7 @@
 			font-weight: 900;
 			text-align: right;
 			@include breakpoint(mobile-landscape){
-				font-size: 1em;
+				font-size: 0.8em;
 			}
 		}
 		p{
