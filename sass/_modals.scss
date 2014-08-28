@@ -1,4 +1,5 @@
 #modal-bg{
+	display: none;
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -130,24 +131,28 @@
 }
 
 #entertainment-modal{
+	display: none;
 	width: 90%;
 	min-width: 0;
 	max-width: 90% !important;
 	margin: 63px auto 0;
 	position: fixed;
-	top: 80px;
+	top: 100px;
 	left: 5%;
 	z-index: 497;
 	padding: 20px;
 	transition: all 300ms ease-in-out;
-	@include breakpoint(mobile-landscape){
+	@include breakpoint(tablet){
 		position: absolute;
+	}
+	@include breakpoint(mobile-landscape){
 		width: 94%;
 		max-width: 94% !important;
 		margin: 63px auto 0;
+		top: 80px;
 		left: 3%;
 	}
-	#background{
+	.background{
 		width: 100%;
 		height: 100%;
 		background: $black;
@@ -156,12 +161,34 @@
 		left: 0;
 		z-index: 498;
 	}
-	#synopsis{
+	.icon-close{
+		display: block;
+		width: 17px;
+		height: 17px;
+		padding: 3px;
+		background: $orange;
+		font-size: 0.6em;
+		font-weight: 900;
+		color: $white;
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		z-index: 500;
+		&:hover, &:focus, &:active{
+			padding: 2px;
+			font-size: 0.7em;
+	    }
+	}
+	.synopsis{
 		width: 45%;
 		float: left;
 		margin-right: 5%;
 		position: relative;
 		z-index: 999;
+		@include breakpoint(tablet){
+			width: 95%;
+			margin: 0 2.5%;
+		}
 		h4{
 			background: $orange;
 			width: 90%;
@@ -185,6 +212,10 @@
 			color: $white;
 			padding: 0 10px;
 			width: 100%;
+			float: left;
+			@include breakpoint(tablet){
+				padding: 0;			
+			}
 		}
 		h5{
 			font-family: 'ubuntu', sans-serif;
@@ -195,6 +226,9 @@
 			float: left;
 			margin-top: 0;
 			height: 80px;
+			@include breakpoint(tablet){
+				padding: 0;			
+			}
 		}
 		ul{
 			li{
@@ -205,39 +239,49 @@
 			}
 		}
 	}
-	#video-wrap{
+	.video-wrap{
 		width: 45%;
 		float: left;
 		margin-right: 5%;
 		position: relative;
 		z-index: 999;
-		#video{
+		@include breakpoint(tablet){
+			width: 95%;
+			margin: 0 2.5%;
+		}
+		.video{
 			width: 100%;
 			margin: 20px 0;
 			iframe{
 				width: 100%;
 			}
 		}
-		#video-details{
+		.video-details{
 			text-align: right;
-			#seasons{
+			.seasons{
 				display: inline-block;
 				color: $white;
 				text-align: right;
 				padding: 0 5px;
 				border-right: 1px solid $orange;
 			}
-			#episodes{
+			.episodes{
 				display: inline-block;
 				color: $white;
 				text-align: right;
 			}
 		}
-		#social{
+		.social{
+			width: auto;
 			float: right;
+			margin: 0;
 			a{
 				color: $orange;
 				font-size: 1.5em;
+				margin-left: 10px;
+				&:hover, &:focus, &:active{
+			    	color: $brown;
+			    }
 			}
 		}
 	}

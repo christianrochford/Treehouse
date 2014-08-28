@@ -11798,7 +11798,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   });
 
   // Fitvids
-  $(".work-video, .project-video").fitVids();
+  $(".work-video, .project-video, .video-wrap").fitVids();
 
   // Work Videos
   $('.work-video.commercials, .work-video.entertainment, .work-video.production, .work-video.interactive').hide();
@@ -11847,12 +11847,14 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
       return false;
     });
 
-    if (window.location.hash) {
-      var hash = window.location.hash.substring(1);
-      $('a[data-option-value=".' + hash + '"]').click();
-    }
+    // if (window.location.hash) {
+    //   var hash = window.location.hash.substring(1);
+    //   $('a[data-option-value=".' + hash + '"]').click();
+    // }
 
-    // Video Modal
+  });
+
+  // Video Modal
     $('.project').click(function() {
       $('#modal-bg, #video-modal').fadeIn(300);
       window.scrollTo(0, 0);
@@ -11861,7 +11863,16 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
       e.preventDefault();
       $('#modal-bg, #video-modal').fadeOut(300);
     });
-  });
+
+  // Entertainment Modal
+    $('.modal-open').click(function() {
+      $('#modal-bg, #entertainment-modal').fadeIn(300);
+      window.scrollTo(0, 0);
+    });
+    $('#entertainment-modal .icon-close').click(function(e) {
+      e.preventDefault();
+      $('#modal-bg, #entertainment-modal').fadeOut(300);
+    });
 
   //  Blog Hover Events
   $('.title, .img-wrap, .read-more').hover(
@@ -11920,23 +11931,6 @@ $(document).ready(function() {
     $('#big-vid').scrollLeft(($('video').width() - $(window).width()) / 2);
     $('#big-vid').scrollTop(($('video').height() - $(window).height()) / 2);
   };
-
-});
-
-$(window).load(function() {
-  // Center about content
-  var windowHeight = ($(window).height() - 200);
-  var aboutHeight = $('#about').height();
-  var aboutMargin = ((windowHeight - aboutHeight) / 2);
-  if (aboutMargin > 0) {
-    $('#about').css({
-      paddingTop: aboutMargin
-    });
-  } else {
-    $('#about').css({
-      paddingTop: 110
-    });
-  }
 
 });
 

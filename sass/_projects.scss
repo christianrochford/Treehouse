@@ -70,16 +70,20 @@
 	}
 	#gallery{
 		width: 100%;
+		max-width: 1200px;
 		overflow: hidden;
 		transition: all 300ms ease-in-out;
 		text-align: center;
 		margin: 0;
+		background-repeat: none !important;
+		background-size: cover !important;
+		background-position: top center !important;
 		.project{
 			display: inline-block;
-			width: 206px;
-			height: 107px;
+			width: 30%;
+			height: 157px;
 			background: $black;
-			margin: 10px;
+			margin: 10px 1.5%;
 			position: relative;
 			overflow: hidden;
 			@include breakpoint(max-width, 496px){
@@ -96,18 +100,11 @@
 					bottom: 0;
 				}
 			}
-			img{
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				left: 0;
-				top: 0;
-				z-index: 1;
-			}
 			.overbox{
 				width: 100%;
 				height: 80px;
 				background: $orange;
+				background: $orange-opaque;
 				position: absolute;
 				left: 0;
 				bottom: -80px;
