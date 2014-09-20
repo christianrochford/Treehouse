@@ -8,7 +8,7 @@
 	background: $white-opaque;
 	z-index: 400;
 }
-#video-modal{
+.video-modal{
 	display: none;
 	width: 90%;
 	min-width: 0;
@@ -130,7 +130,7 @@
 	}
 }
 
-#entertainment-modal{
+.entertainment-modal{
 	display: none;
 	width: 90%;
 	min-width: 0;

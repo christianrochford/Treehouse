@@ -8,13 +8,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Treehouse</title>
-<link rel="stylesheet" href="css/treehouse.css">
+<link rel="stylesheet" href="../css/treehouse.css">
 <!-- <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'> -->
 <script src="../js/modernizr/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+	<div id="preload">
+		<div class="loader">Loading...</div>
+	</div>
 	<div id="gradient"></div>
+	<div id="search">
+		<form action="">
+			<input type="text" placeholder="Enter your search terms here">
+			<input type="submit" value="search" id="submit-search">
+		</form>
+		<a href="" class="icon-close" id="close-search" aria-hidden="true"></a>
+	</div>
 	<header>
 		<div id="background"></div>
 		<div id="logo">
@@ -23,6 +33,7 @@
 		</div>
 		<a href="#" id="mobile-open" class="icon-menu" aria-hidden="true"></a>
 		<a href="#" id="mobile-close" class="icon-close" aria-hidden="true"></a>
+		<a href="#" class="icon-search mobile-search" aria-hidden="true"></a>
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -31,6 +42,7 @@
 				<li><a href="index.html#work">Work</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="index.html#contact">Contact</a></li>
+				<li><a href="#" class="icon-search" aria-hidden="true"></a></li>
 			</ul>
 		</nav>
 		<div class="social">
@@ -62,14 +74,17 @@
 			</ul>
 		</div>
 	</header>
- 
-	<div class="page" id="home" style="background: url(img/treehouse.png);">
-		<div id="video-wrap">
-			<video autoplay loop poster="img/treehouse.png" id="big-vid">
-				<source src="video/treehouse.webm" type="video/webm">
-				<source src="video/treehouse.mp4" type="video/mp4">
-			</video>
-		</div>
+
+	<div id="home">
+		<section id="video">
+			<div id="video-placeholder"></div>
+			<div id="video-holder">
+				<video autoplay preload width="640" height="360" loop="loop" tabindex="0" muted>
+					<source src="../video/treehouse.webm" type="video/webm">
+					<source src="../video/treehouse.mp4" type="video/mp4">
+				</video>
+			</div>
+		</section>
 		<div id="intro">
 			<span class="icon-treehouse"></span>
 			<h2>Treehouse Republic</h2>
@@ -100,11 +115,11 @@
 			</div>
 			<div class="columns six">
 				<div id="entertainment-intro">
-					<h4><a href="entertainment.html">Treehouse Republic Entertainment</a></h4>
+					<h4><a href="entertainment.html">Treehouse Republic Entertainment <span class="icon-play"></span></a></h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, doloremque fugit dolorem expedita dolores obcaecati accusantium harum enim quia eius! Cupiditate, magni enim dolorem assumenda quos tempora ex? Minus, voluptate.</p>
 				</div>
 				<div id="studio-intro">
-					<h4><a href="studio.html">Treehouse Republic Studio</a></h4>
+					<h4><a href="studio.html">Treehouse Republic Studio <span class="icon-play"></span></a></h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, doloremque fugit dolorem expedita dolores obcaecati accusantium harum enim quia eius! Cupiditate, magni enim dolorem assumenda quos tempora ex? Minus, voluptate.</p>
 				</div>
 			</div>
@@ -350,7 +365,7 @@
 	</footer>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8FvgnfLYG71e7hBF0RlD-iaUQGfV4y4&sensor=true"></script>
-<script src="js/treehouse.min.js"></script>
+<script src="../js/treehouse.min.js"></script>
 
 </body>
 </html>

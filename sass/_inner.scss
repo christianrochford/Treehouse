@@ -1,0 +1,24 @@
+#inner{
+	padding-top: 80px;
+	h2{
+		font-family: 'agency', sans-serif;
+		font-weight: bold;
+		font-size: 2em;
+		color: $brown;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		transition: all 300ms ease-in-out;
+		@include breakpoint(tablet){
+			width: auto;
+			padding-right: 10px;
+		}
+	}
+	.twelve{
+		width: 90%;
+		margin: 0 5%;
+		@include breakpoint(mobile-landscape){
+			width: 100%;
+			margin: 0;
+		}
+	}
+}

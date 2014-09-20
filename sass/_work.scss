@@ -2,11 +2,10 @@
 	overflow: hidden;
 	transition: all 300ms ease-in-out;
 	width: 80%;
-	margin: 0 10%;
-	padding-top: 100px;
+	margin: 0 10% 60px;
 	@include breakpoint(mobile-landscape){
 		width: 100%;
-		margin: 0;
+		margin: 0 0 20px;
 		padding-top: 80px;
 	}
 	#work-intro{

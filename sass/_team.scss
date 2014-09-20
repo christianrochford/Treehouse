@@ -1,12 +1,15 @@
 #team{
 	position: relative;
 	padding: 0 10px;
+	margin-bottom: 60px;
+	@include breakpoint(mobile-landscape){
+		margin-bottom: 20px;
+	}
 	h2{
 		color: $brown;
 		font-family: 'agency', sans-serif;
 		font-size: 2em;
 		margin-left: 5%;
-		padding-top: 100px;
 		text-transform: uppercase;
 		@include breakpoint(mobile-landscape){
 			padding-top: 80px;

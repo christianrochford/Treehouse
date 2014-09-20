@@ -8,7 +8,6 @@
 	.twelve{
 		width: 90%;
 		margin: 0 5%;
-		padding-top: 100px;
 		@include breakpoint(mobile-landscape){
 			width: 100%;
 			margin: 0;
@@ -31,6 +30,12 @@
 			@include breakpoint(mobile-landscape){
 				height: 100px;
 			}
+		}
+		.error{
+			color: $red;
+			font-size: 0.8em;
+			font-style: italic;
+			margin: 0;
 		}
 		#submit{
 			background: $orange;
