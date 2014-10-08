@@ -117,19 +117,51 @@ var styles = [
 var map;
 var dublin = new google.maps.LatLng(53.336985,-6.249164);
 
+function ZoomInControl(controlDiv, map) {
+
+  var zoomIn = document.getElementById('zoomin');
+  google.maps.event.addDomListener(zoomIn, 'click', function() {
+    var currentZoomLevel = map.getZoom();
+    if(currentZoomLevel !== 0){
+      map.setZoom(currentZoomLevel + 1);
+    }  
+  });
+
+}
+
+function ZoomOutControl(controlDiv, map) {
+
+  var zoomOut = document.getElementById('zoomout');
+  google.maps.event.addDomListener(zoomOut, 'click', function() {
+    var currentZoomLevel = map.getZoom();
+    if(currentZoomLevel !== 0){
+      map.setZoom(currentZoomLevel - 1);
+    }  
+  });
+
+}
+
 function initialize() {
   var mapOptions = {
     center: dublin,
     zoom: 14,
-    zoomControl: false,
+    zoomControl: true,
     disableDefaultUI: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: styles,
     scrollwheel: false,
-    draggable: false,
+    draggable: true,
   };
   
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  var zoomInControlDiv = document.createElement('div');
+  var zoomInControl = new ZoomInControl(zoomInControlDiv, map);
+  zoomInControlDiv.index = 1;
+
+  var zoomOutControlDiv = document.createElement('div');
+  var zoomOutControl = new ZoomOutControl(zoomOutControlDiv, map);
+  zoomOutControlDiv.index = 1;
 
   //Marker 
   var treehouse = new google.maps.Marker({

@@ -4,17 +4,19 @@
 	background-size: cover !important;
 	width: 100%;
 	position: relative;
-	padding-top: 0px;
+	padding: 0 0 100px;
 	height: 100%;
 	overflow: hidden;
-	margin: 0px 0 60px;
+	margin: 0;
 	@include breakpoint(mobile-landscape){
 		margin: 0px 0 20px;
+		padding: 0;
 	}
 	#video{
 		padding: 0px;
 		overflow: hidden;
 		background: none repeat scroll 0% 0% #000;
+		position: relative;
 	}
 }
 #video-placeholder{
@@ -102,6 +104,9 @@
 				margin-bottom: 0;
 				vertical-align: middle;
 				transition: all 300ms ease-in-out;
+				a{
+					color: transparent;
+				}
 				@include breakpoint(mobile-landscape){
 					padding-bottom: 20px;
 				}
@@ -112,6 +117,9 @@
 			background: $orange-opaque;
 			p{
 				color: $white;
+				a{
+					color: $white;
+				}
 			}
 		}
 	}

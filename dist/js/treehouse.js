@@ -9870,7 +9870,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   };
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
-;/*!
+;var Froogaloop=function(){function e(a){return new e.fn.init(a)}function h(a,c,b){if(!b.contentWindow.postMessage)return!1;var f=b.getAttribute("src").split("?")[0],a=JSON.stringify({method:a,value:c});"//"===f.substr(0,2)&&(f=window.location.protocol+f);b.contentWindow.postMessage(a,f)}function j(a){var c,b;try{c=JSON.parse(a.data),b=c.event||c.method}catch(f){}"ready"==b&&!i&&(i=!0);if(a.origin!=k)return!1;var a=c.value,e=c.data,g=""===g?null:c.player_id;c=g?d[g][b]:d[b];b=[];if(!c)return!1;void 0!==
+a&&b.push(a);e&&b.push(e);g&&b.push(g);return 0<b.length?c.apply(null,b):c.call()}function l(a,c,b){b?(d[b]||(d[b]={}),d[b][a]=c):d[a]=c}var d={},i=!1,k="";e.fn=e.prototype={element:null,init:function(a){"string"===typeof a&&(a=document.getElementById(a));this.element=a;a=this.element.getAttribute("src");"//"===a.substr(0,2)&&(a=window.location.protocol+a);for(var a=a.split("/"),c="",b=0,f=a.length;b<f;b++){if(3>b)c+=a[b];else break;2>b&&(c+="/")}k=c;return this},api:function(a,c){if(!this.element||
+!a)return!1;var b=this.element,f=""!==b.id?b.id:null,d=!c||!c.constructor||!c.call||!c.apply?c:null,e=c&&c.constructor&&c.call&&c.apply?c:null;e&&l(a,e,f);h(a,d,b);return this},addEvent:function(a,c){if(!this.element)return!1;var b=this.element,d=""!==b.id?b.id:null;l(a,c,d);"ready"!=a?h("addEventListener",a,b):"ready"==a&&i&&c.call(null,d);return this},removeEvent:function(a){if(!this.element)return!1;var c=this.element,b;a:{if((b=""!==c.id?c.id:null)&&d[b]){if(!d[b][a]){b=!1;break a}d[b][a]=null}else{if(!d[a]){b=
+!1;break a}d[a]=null}b=!0}"ready"!=a&&b&&h("removeEventListener",a,c)}};e.fn.init.prototype=e.fn;window.addEventListener?window.addEventListener("message",j,!1):window.attachEvent("onmessage",j);return window.Froogaloop=window.$f=e}();;/*!
  * Isotope PACKAGED v2.0.0
  * Filter & sort magical layouts
  * http://isotope.metafizzy.co
@@ -11747,9 +11750,37 @@ $(document).ready(function() {
   $('#gallery').css({
     minHeight: ($(window).height() - 230)
   });
-  $('#studio, #inner').css({
+  $('#studio, #entertainment, #inner').css({
     minHeight: ($(window).height() - 100)
   });
+
+if($(window).height() > 960){
+  $('.page').css({
+    minHeight: ($(window).height() - 100)
+  });
+  var pageHeight = $('.page').height(),
+      aboutHeight = $('#about-wrap').height(),
+      teamHeight = $('#team-wrap').height(),
+      showreelsHeight = $('#reels-wrap').height(),
+      contactHeight = $('#contact-wrap').height();
+      console.log(pageHeight);
+      console.log(aboutHeight);
+      console.log(teamHeight);
+      console.log(showreelsHeight);
+      console.log(contactHeight);
+
+  $('#about-wrap').css({paddingTop: ((pageHeight - aboutHeight)/2)});
+  $('#team-wrap').css({paddingTop: ((pageHeight - teamHeight)/2)});
+  $('#reels-wrap').css({paddingTop: ((pageHeight - showreelsHeight)/2)});
+  $('#contact-wrap').css({paddingTop: ((pageHeight - contactHeight)/2)});
+  $('.divider.desktop').show();
+} else {
+  $('#about-wrap').css({paddingTop: 0});
+  $('#team-wrap').css({paddingTop: 0});
+  $('#reels-wrap').css({paddingTop: 0});
+  $('#contact-wrap').css({paddingTop: 0});
+  $('.divider.desktop').hide();
+}
 
   // Mobile nav
   $('#mobile-open').click(function(e) {
@@ -11796,15 +11827,30 @@ $(document).ready(function() {
     $('header').removeClass('search');
   });
 
+  // Smooth Scroll
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+
   // Text Box Hover
   $('.block').hover(
     function() {
-      $(this).next('.text-box').addClass('on');
-    },
-    function() {
       $('.text-box').removeClass('on');
+      $(this).next('.text-box').addClass('on');
     }
   );
+  $('#video').click(function(){
+    $('.text-box').removeClass('on');
+  });
 
   // Initialise Carousel
   $('.carousel').slick({
@@ -11836,19 +11882,18 @@ $(document).ready(function() {
   });
 
   // Fitvids
-  $(".work-video, .project-video, .video-wrap").fitVids();
+  $(".work-video, .project-video, .video-wrap, #blog").fitVids();
 
   // Work Videos
-  $('.work-video.commercials, .work-video.entertainment, .work-video.production, .work-video.interactive').hide();
-  $('.projects-link.commercials, .projects-link.entertainment, .projects-link.production, .projects-link.interactive').hide();
   $('.gallery-link').click(function(e) {
     e.preventDefault();
+    $('iframe[src*="vimeo.com"]').each(function () {
+        $f(this).api('pause');
+    });
     var href = $(this).attr("href");
     var hash = href.substr(1);
     $('.work-video').hide();
     $('.work-video.' + hash).show();
-    $('.projects-link').hide();
-    $('.projects-link.' + hash).show();
   });
 
   // Isotope Projects Gallery
@@ -11895,9 +11940,13 @@ $(document).ready(function() {
     $('#video-' + projectName).fadeIn(300);
     window.scrollTo(0, 0);
   });
+
   $('.video-modal .icon-close, #filters a').click(function(e) {
     e.preventDefault();
     $('#modal-bg, .video-modal').fadeOut(300);
+    $('iframe[src*="vimeo.com"]').each(function () {
+        $f(this).api('pause');
+    });
   });
 
   // Entertainment Modal
@@ -11910,6 +11959,9 @@ $(document).ready(function() {
   $('.entertainment-modal .icon-close').click(function(e) {
     e.preventDefault();
     $('#modal-bg, .entertainment-modal').fadeOut(300);
+    $('iframe[src*="vimeo.com"]').each(function () {
+        $f(this).api('pause');
+    });
   });
 
   //  Blog Hover Events
@@ -11954,25 +12006,47 @@ $(window).load(function(){
   // Remove loader
   $('#preload').fadeOut(300);
 
-  // Smooth Scroll
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 90
-        }, 500);
-        return false;
-      }
-    }
-  });
+  if (location.hash === "#isDesign") {
+    $('#reels-link').trigger('click');
+  }
 
 });
 
 $(window).resize(function() {
 
   $('#gradient').height($(window).height() + 100);
+
+  $('#studio, #entertainment, #inner').css({
+    minHeight: ($(window).height() - 100)
+  });
+
+  if($(window).height() > 960){
+  $('.page').css({
+    minHeight: ($(window).height() - 100)
+  });
+  var pageHeight = $('.page').height(),
+      aboutHeight = $('#about-wrap').height(),
+      teamHeight = $('#team-wrap').height(),
+      showreelsHeight = $('#reels-wrap').height(),
+      contactHeight = $('#contact-wrap').height();
+      console.log(pageHeight);
+      console.log(aboutHeight);
+      console.log(teamHeight);
+      console.log(showreelsHeight);
+      console.log(contactHeight);
+
+  $('#about-wrap').css({paddingTop: ((pageHeight - aboutHeight)/2)});
+  $('#team-wrap').css({paddingTop: ((pageHeight - teamHeight)/2)});
+  $('#reels-wrap').css({paddingTop: ((pageHeight - showreelsHeight)/2)});
+  $('#contact-wrap').css({paddingTop: ((pageHeight - contactHeight)/2)});
+  $('.divider.desktop').show();
+} else {
+  $('#about-wrap').css({paddingTop: 0});
+  $('#team-wrap').css({paddingTop: 0});
+  $('#reels-wrap').css({paddingTop: 0});
+  $('#contact-wrap').css({paddingTop: 0});
+  $('.divider.desktop').hide();
+}
 
   if ($(window).width() > 768) {
     $('.mobile-search, #mobile-open, #mobile-close').hide();
@@ -12116,19 +12190,51 @@ var styles = [
 var map;
 var dublin = new google.maps.LatLng(53.336985,-6.249164);
 
+function ZoomInControl(controlDiv, map) {
+
+  var zoomIn = document.getElementById('zoomin');
+  google.maps.event.addDomListener(zoomIn, 'click', function() {
+    var currentZoomLevel = map.getZoom();
+    if(currentZoomLevel !== 0){
+      map.setZoom(currentZoomLevel + 1);
+    }  
+  });
+
+}
+
+function ZoomOutControl(controlDiv, map) {
+
+  var zoomOut = document.getElementById('zoomout');
+  google.maps.event.addDomListener(zoomOut, 'click', function() {
+    var currentZoomLevel = map.getZoom();
+    if(currentZoomLevel !== 0){
+      map.setZoom(currentZoomLevel - 1);
+    }  
+  });
+
+}
+
 function initialize() {
   var mapOptions = {
     center: dublin,
     zoom: 14,
-    zoomControl: false,
+    zoomControl: true,
     disableDefaultUI: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: styles,
     scrollwheel: false,
-    draggable: false,
+    draggable: true,
   };
   
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  var zoomInControlDiv = document.createElement('div');
+  var zoomInControl = new ZoomInControl(zoomInControlDiv, map);
+  zoomInControlDiv.index = 1;
+
+  var zoomOutControlDiv = document.createElement('div');
+  var zoomOutControl = new ZoomOutControl(zoomOutControlDiv, map);
+  zoomOutControlDiv.index = 1;
 
   //Marker 
   var treehouse = new google.maps.Marker({

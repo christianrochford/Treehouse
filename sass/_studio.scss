@@ -45,9 +45,9 @@
 			padding: 0 20px;
 			transition: all 300ms ease-in-out;
 			@include breakpoint(mobile-landscape){
-				height: 50px;
+				height: 36px;
 				padding: 0;
-				margin: -20px 0 40px;
+				margin: -20px 0 20px;
 			}
 			li{
 				display: inline;
@@ -55,7 +55,7 @@
 				@include breakpoint(mobile-landscape){
 					display: inline-block;
 					background: $black;
-					width: 50%;
+					width: 33.333%;
 					float: left;
 					margin: 0;
 					position: relative;
@@ -95,7 +95,8 @@
 		}
 	}
 	.studio-image{
-		width: 200px;
+		width: 50%;
+		max-width: 600px;
 		height: 300px;
 		float: right;
 		background-repeat: no-repeat !important;

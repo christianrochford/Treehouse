@@ -24,7 +24,8 @@
 			width: 50%;
 		}
 		@include breakpoint(max-width, 440px){
-			margin-left: 25%;
+			width: 60%;
+			margin-left: 20%;
 		}
 	}
 	input[type="submit"]{
@@ -122,10 +123,13 @@ header{
 		}
 	}
 	nav{
-		width: 500px;
+		width: 610px;
 		float: right;
 		margin: 10px 40px 0 0;
 		transition: height 300ms ease-in-out;
+		@include breakpoint(max-width, 900px){
+			width: 450px;
+		}
 		@include breakpoint(tablet){
 			background: $black;
 			width: 100%;
@@ -142,6 +146,10 @@ header{
 				display: inline-block;
 				padding-left: 40px;
 				font-size: 1em;
+				transition: height 300ms ease-in-out;
+				@include breakpoint(max-width, 900px){
+					padding-left: 20px;
+				}
 				a{
 					font-family: 'agency', sans-serif;
 					&:hover, &:focus, &:active{
@@ -166,6 +174,9 @@ header{
 					    	color: $orange;
 					    }
 					}
+					.icon-search{
+						display: none;
+					}
 				}
 			}
 		}
@@ -174,7 +185,7 @@ header{
 		display: none;
 	}
 	nav.open{
-		height: 255px;
+		height: 300px;
 		margin-top: -20px;
 		position: relative;
 		z-index: -2;

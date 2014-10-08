@@ -1,9 +1,12 @@
 #contact{
-	h2{
-		color: $brown;
-		font-family: 'agency', sans-serif;
-		font-size: 2em;
-		text-transform: uppercase;
+	position: relative;
+	padding-top: 100px;
+	@include breakpoint(max-width, 1400px){
+		margin-bottom: 80px;
+	}
+	@include breakpoint(mobile-landscape){
+		margin-bottom: 20px;
+		padding: 80px 0 0;
 	}
 	.twelve{
 		width: 90%;
@@ -12,6 +15,28 @@
 			width: 100%;
 			margin: 0;
 		}
+	}
+	.six{
+		padding: 0;
+		&:first-of-type{
+			padding-right: 10px;
+			@include breakpoint(max-width, 767px){
+				padding: 0;
+			}
+		}
+		&:last-of-type{
+			padding-left: 10px;
+			@include breakpoint(tablet){
+				padding: 0;
+			}
+		}
+	}
+	h2{
+		color: $brown;
+		font-family: 'agency', sans-serif;
+		font-size: 2em;
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 	form{
 		input, textarea{
@@ -62,11 +87,32 @@
 		margin-top: 20px;
 	}
 	#map-canvas{
-		width: 110%;
-		height: 110%;
+		width: 120%;
+		height: 120%;
 		position: absolute;
-		top: -5%;
-		left: -5%;
+		top: -10%;
+		left: -10%;
+	}
+	#zoomout, #zoomin{
+		width: 30px;
+		height: 30px;
+		color: $white;
+		font-size: 1.5em;
+		text-align: center;
+		background-color: $orange;
+		position: absolute;
+		bottom: 10px;
+		z-index: 1;
+		&:hover, &:focus, &:active{
+			cursor: pointer;
+		}
+	}
+	#zoomout{
+		right: 10px;
+	}
+	#zoomin{
+		line-height: 1.2em;
+		right: 50px;
 	}
 	#location{
 		h4{

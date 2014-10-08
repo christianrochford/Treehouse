@@ -44,3 +44,22 @@ a{
 	background: -o-linear-gradient(top, $white, $dark-grey);
 	background: linear-gradient( 0deg, $dark-grey, $white);
 }
+.divider{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	z-index: 998;
+	.icon-scroll-down{
+		font-size: 1.2em;
+		color: $orange;
+		color: $orange-opaque;
+		&:hover, &:focus, &:active{
+	    	color: $orange;
+	    }
+	}
+}
+.divider.desktop{
+	display: none;
+}

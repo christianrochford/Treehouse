@@ -122,7 +122,7 @@
 		}	
 	}
 	#tags, #archives{
-		@include breakpoint(tablet){
+		@include breakpoint(max-width, 767px){
 			width: 50%;
 			float: left;
 			padding-left: 10px;

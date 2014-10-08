@@ -1,12 +1,27 @@
-#work{
+#show-reels{
+	position: relative;
 	overflow: hidden;
 	transition: all 300ms ease-in-out;
-	width: 80%;
-	margin: 0 10% 60px;
+	width: 100%;
+	margin: 20px 0 0;
+	padding-top: 100px;
+	@include breakpoint(max-width, 1400px){
+		margin-bottom: 80px;
+	}
 	@include breakpoint(mobile-landscape){
 		width: 100%;
 		margin: 0 0 20px;
-		padding-top: 80px;
+		padding: 80px 0 0;
+	}
+	.twelve{
+		width: 90%;
+		margin: 0 5%;
+		padding: 0 12px;
+		@include breakpoint(mobile-landscape){
+			width: 100%;
+			padding: 0 10px;
+			margin: 0;
+		}
 	}
 	#work-intro{
 		width: 30%;
@@ -58,11 +73,20 @@
 			background: $black;
 			width: 100%;
 			transition: all 300ms ease-in-out;
+			overflow: hidden;
+			@include breakpoint(mobile-landscape){
+				overflow: visible;
+			}
 			ul{
 				margin: 0 0 20px 10px;
+				width: auto;
+				float: left;
+				height: 20px;
 				@include breakpoint(mobile-landscape){
 					overflow: hidden;
 					padding: 10px 0;
+					float: none;
+					height: auto;
 				}
 				li{
 					display: inline;
@@ -81,7 +105,7 @@
 						font-size: 0.8em;
 						font-weight: bold;
 						margin: 0;
-						line-height: 2.6em;
+						line-height: 3em;
 						@include breakpoint(mobile-landscape){
 							display: block;
 							text-align: center; 
@@ -89,6 +113,50 @@
 					}
 				}
 			}
+			#projects-link{
+				display: none;
+				width: 45%;
+				margin: 0 2.5%;
+				@include breakpoint(mobile-landscape){
+					display: block;
+				}
+			}
+			.more-projects.mobile{
+				height: auto;
+				float: none;
+				padding: 0;
+				@include breakpoint(mobile-landscape){
+					display: block;
+				}
+			}
+			.more-projects{
+				width: auto;
+				height: 40px;
+				float: right;
+				background: $red;
+				padding: 13px;
+				font-family: "ubuntu",sans-serif;
+				color: #FFF;
+				font-size: 0.8em;
+				font-weight: bold;
+				@include breakpoint(mobile-landscape){
+					display: none;
+				}
+				&:after{
+					content: '\e618';
+					font-family: "treehouse";
+					color: #FFF;
+					font-size: 0.8em;
+					font-weight: bold;
+				}
+			}
+		}
+		.work-video{
+			display: none;
+			margin-top: 20px;
+		}
+		.work-video.work-1{
+			display: block;
 		}
 		.projects-link{
 			width: 100%;
