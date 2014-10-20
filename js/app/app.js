@@ -53,7 +53,8 @@ $(document).ready(function() {
     minHeight: ($(window).height() - 100)
   });
 
-if($(window).height() > 960){
+if($(window).height() > 700){
+  $('.divider.desktop').show();
   $('.page').css({
     minHeight: ($(window).height() - 100)
   });
@@ -74,6 +75,7 @@ if($(window).height() > 960){
   $('#contact-wrap').css({paddingTop: ((pageHeight - contactHeight)/2)});
   $('.divider.desktop').show();
 } else {
+  $('.divider.desktop').hide();
   $('#about-wrap').css({paddingTop: 0});
   $('#team-wrap').css({paddingTop: 0});
   $('#reels-wrap').css({paddingTop: 0});
@@ -319,11 +321,12 @@ $(window).resize(function() {
     minHeight: ($(window).height() - 100)
   });
 
-  if($(window).height() > 960){
-  $('.page').css({
-    minHeight: ($(window).height() - 100)
-  });
-  var pageHeight = $('.page').height(),
+  if($(window).height() > 700){
+    $('.divider.desktop').show();  
+    $('.page').css({
+      minHeight: ($(window).height() - 100)
+    });
+    var pageHeight = $('.page').height(),
       aboutHeight = $('#about-wrap').height(),
       teamHeight = $('#team-wrap').height(),
       showreelsHeight = $('#reels-wrap').height(),
@@ -334,18 +337,19 @@ $(window).resize(function() {
       console.log(showreelsHeight);
       console.log(contactHeight);
 
-  $('#about-wrap').css({paddingTop: ((pageHeight - aboutHeight)/2)});
-  $('#team-wrap').css({paddingTop: ((pageHeight - teamHeight)/2)});
-  $('#reels-wrap').css({paddingTop: ((pageHeight - showreelsHeight)/2)});
-  $('#contact-wrap').css({paddingTop: ((pageHeight - contactHeight)/2)});
-  $('.divider.desktop').show();
-} else {
-  $('#about-wrap').css({paddingTop: 0});
-  $('#team-wrap').css({paddingTop: 0});
-  $('#reels-wrap').css({paddingTop: 0});
-  $('#contact-wrap').css({paddingTop: 0});
-  $('.divider.desktop').hide();
-}
+    $('#about-wrap').css({paddingTop: ((pageHeight - aboutHeight)/2)});
+    $('#team-wrap').css({paddingTop: ((pageHeight - teamHeight)/2)});
+    $('#reels-wrap').css({paddingTop: ((pageHeight - showreelsHeight)/2)});
+    $('#contact-wrap').css({paddingTop: ((pageHeight - contactHeight)/2)});
+    $('.divider.desktop').show();
+  } else {
+    $('.divider.desktop').hide();
+    $('#about-wrap').css({paddingTop: 0});
+    $('#team-wrap').css({paddingTop: 0});
+    $('#reels-wrap').css({paddingTop: 0});
+    $('#contact-wrap').css({paddingTop: 0});
+    $('.divider.desktop').hide();
+  }
 
   if ($(window).width() > 768) {
     $('.mobile-search, #mobile-open, #mobile-close').hide();

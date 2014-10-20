@@ -45,7 +45,7 @@
 			padding: 0 20px;
 			transition: all 300ms ease-in-out;
 			@include breakpoint(mobile-landscape){
-				height: 36px;
+				height: auto;
 				padding: 0;
 				margin: -20px 0 20px;
 			}
@@ -55,7 +55,8 @@
 				@include breakpoint(mobile-landscape){
 					display: inline-block;
 					background: $black;
-					width: 33.333%;
+					width: 50%;
+					height: 34px;
 					float: left;
 					margin: 0;
 					position: relative;
@@ -78,6 +79,11 @@
 	}
 }
 .studio-detail{
+	@include breakpoint(mobile-landscape){
+		width: 100%;
+		float: left;
+		margin-top: 10px;	
+	}
 	h3{
 		font-family: 'ubuntu', sans-serif;
 		font-weight: bold;
@@ -95,18 +101,21 @@
 		}
 	}
 	.studio-image{
-		width: 50%;
-		max-width: 600px;
-		height: 300px;
+		width: 100%;
+		height: 600px;
 		float: right;
 		background-repeat: no-repeat !important;
 		background-position: top center !important;
 		background-size: cover !important;
-		margin-left: 20px;
+		margin: 0 0 20px 20px;
+		transition: all 300ms ease-in-out;
+		@include breakpoint(large-desktop){
+			height: 400px;
+		}
 		@include breakpoint(mobile-landscape){
 			float: none;
 			width: 100%;
-			height: 200px;
+			height: 300px;
 			margin-left: 0;
 		}
 	}

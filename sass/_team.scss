@@ -71,6 +71,10 @@
 				font-size: 0.7em;
 				font-weight: 600;
 				margin: 0;
+				text-align: center;
+				display: inline-block;
+				width: 100%;
+				min-height: 24px;
 				@include breakpoint(mobile-landscape){
 					margin-top: 8px;
 				}

@@ -148,7 +148,6 @@ function initialize() {
     zoomControl: true,
     disableDefaultUI: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    styles: styles,
     scrollwheel: false,
     draggable: true,
   };
