@@ -11750,7 +11750,7 @@ $(document).ready(function() {
   $('#gallery').css({
     minHeight: ($(window).height() - 230)
   });
-  $('#studio, #entertainment, #inner').css({
+  $('#studio, #entertainment-page, #inner').css({
     minHeight: ($(window).height() - 100)
   });
 
@@ -11841,6 +11841,11 @@ if($(window).height() > 700){
         return false;
       }
     }
+  });
+
+  // Loop video in Firefox
+  $('video').bind('ended', function(){ 
+    this.play();
   });
 
   // Text Box Hover
@@ -12018,7 +12023,7 @@ $(window).resize(function() {
 
   $('#gradient').height($(window).height() + 100);
 
-  $('#studio, #entertainment, #inner').css({
+  $('#studio, #entertainment-page, #inner').css({
     minHeight: ($(window).height() - 100)
   });
 
@@ -12194,36 +12199,12 @@ var styles = [
 var map;
 var dublin = new google.maps.LatLng(53.336985,-6.249164);
 
-function ZoomInControl(controlDiv, map) {
-
-  var zoomIn = document.getElementById('zoomin');
-  google.maps.event.addDomListener(zoomIn, 'click', function() {
-    var currentZoomLevel = map.getZoom();
-    if(currentZoomLevel !== 0){
-      map.setZoom(currentZoomLevel + 1);
-    }  
-  });
-
-}
-
-function ZoomOutControl(controlDiv, map) {
-
-  var zoomOut = document.getElementById('zoomout');
-  google.maps.event.addDomListener(zoomOut, 'click', function() {
-    var currentZoomLevel = map.getZoom();
-    if(currentZoomLevel !== 0){
-      map.setZoom(currentZoomLevel - 1);
-    }  
-  });
-
-}
-
 function initialize() {
   var mapOptions = {
     center: dublin,
     zoom: 14,
     zoomControl: true,
-    disableDefaultUI: true,
+    disableDefaultUI: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     scrollwheel: false,
     draggable: true,
@@ -12231,19 +12212,11 @@ function initialize() {
   
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var zoomInControlDiv = document.createElement('div');
-  var zoomInControl = new ZoomInControl(zoomInControlDiv, map);
-  zoomInControlDiv.index = 1;
-
-  var zoomOutControlDiv = document.createElement('div');
-  var zoomOutControl = new ZoomOutControl(zoomOutControlDiv, map);
-  zoomOutControlDiv.index = 1;
-
   //Marker 
   var treehouse = new google.maps.Marker({
     position: dublin,
     map: map,
-    icon: '../img/map-logo.png'
+    icon: 'http://treehouserepublic.com/img/map-logo.jpg'
   }); 
 
 }

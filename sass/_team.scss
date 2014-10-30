@@ -31,10 +31,9 @@
 			float: left;
 		}
 		.details{
-			background: url('../img/profile_bg.png');
-			background-repeat: none;
-			background-size: cover;
-			background-position: top center;
+			background-repeat: none !important;
+			background-size: cover !important;
+			background-position: top center !important;
 			width: 100%;
 			float: left;
 			padding: 10px;

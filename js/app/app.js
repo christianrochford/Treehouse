@@ -49,7 +49,7 @@ $(document).ready(function() {
   $('#gallery').css({
     minHeight: ($(window).height() - 230)
   });
-  $('#studio, #entertainment, #inner').css({
+  $('#studio, #entertainment-page, #inner').css({
     minHeight: ($(window).height() - 100)
   });
 
@@ -140,6 +140,11 @@ if($(window).height() > 700){
         return false;
       }
     }
+  });
+
+  // Loop video in Firefox
+  $('video').bind('ended', function(){ 
+    this.play();
   });
 
   // Text Box Hover
@@ -317,7 +322,7 @@ $(window).resize(function() {
 
   $('#gradient').height($(window).height() + 100);
 
-  $('#studio, #entertainment, #inner').css({
+  $('#studio, #entertainment-page, #inner').css({
     minHeight: ($(window).height() - 100)
   });
 

@@ -5,8 +5,12 @@ AddType video/webm .webm
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Redirects from www to non-www
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^work http://treehouserepublic.com/projects [R=301,L]
+    RewriteRule ^aboutus http://treehouserepublic.com/#about [R=301,L]
+    RewriteRule ^contact http://treehouserepublic.com/#contact [R=301,L]
+    
+    #Force non-www:
+    RewriteCond %{HTTP_HOST} www.(.*)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
     # Redirect index.php Requests
@@ -20,3 +24,9 @@ AddType video/webm .webm
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ /index.php/$1 [L]
 </IfModule>
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>

@@ -1,4 +1,4 @@
-#entertainment{
+#entertainment-page{
 	position: relative;
 	padding: 0 10px;
 	h2{
@@ -63,7 +63,10 @@
 	}
 	#description{
 		width: 95%;
-		background: $orange;
+		background: url('../img/entertainment.jpg');
+		background-size: cover;
+		background-position: top center;
+		background-repeat: no-repeat;
 		margin: 20px 2.5%;
 		padding: 20px;
 		p{
